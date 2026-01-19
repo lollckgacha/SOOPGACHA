@@ -401,7 +401,7 @@ const SOOP_DATA = {
         {"id":"s381","name":"악어","channelUrl":"https://www.sooplive.co.kr/station/jdm1197","imgs":["images/streamers/acau.png"]},
         {"id":"s382","name":"중력","channelUrl":"https://www.sooplive.co.kr/station/vkzm14","imgs":["images/streamers/jungryeok.png"]},
         {"id":"s383","name":"수닝","channelUrl":"https://www.sooplive.co.kr/station/hko901","imgs":["images/streamers/suning.png"]},
-        {"id":"s384","name":"리타","channelUrl":"https://www.sooplive.co.kr/station/030jjj","imgs":["images/streamers/lita.png"]}
+        {"id":"s384","name":"리타","channelUrl":"https://www.sooplive.co.kr/station/030jjj","imgs":["images/streamers/lita.png"]},
        {"id":"s385","name":"삭비","channelUrl":"https://www.sooplive.co.kr/station/sakbi1","imgs":["images/streamers/sakbi.png"]}
     ],
     achievements: [
@@ -460,4 +460,5 @@ const SOOP_DATA = {
         {"id":"m1","title":"카드 수집","type":"COUNT","reward":3,"logoUrl":"","targetCount":10,"isInfinite":true}
     ]
 };
+
 
