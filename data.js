@@ -410,7 +410,7 @@ const SOOP_DATA = {
         {"id":"c2","title":"이브닛","type":"CREW","reward":3,"logoUrl":"images/logos/ivnit.webp","targetList":["u32","여르미","한결","비몽","샤르망"]},
         {"id":"c3","title":"단코한끼","type":"CREW","reward":3,"logoUrl":"images/logos/danco.png","targetList":["단츄","코렛트","한결","양도끼"]},
         {"id":"c4","title":"플랜비","type":"CREW","reward":3,"logoUrl":"images/logos/planb.png","targetList":["한세긴","나비","송밤","크앙희"]},
-        {"id":"c5","title":"고멤클래식","type":"CREW","reward":3,"logoUrl":"images/logos/planb.png","targetList":["독고혜지","뢴트게늄","비밀소녀","티파니0421","해루석"]},
+        {"id":"c5","title":"고멤클래식","type":"CREW","reward":3,"logoUrl":"images/logos/gomemc.png","targetList":["독고혜지","뢴트게늄","비밀소녀","티파니0421","해루석","곽춘식"]},
         {"id":"c6","title":"크로아","type":"CREW","reward":3,"logoUrl":"images/logos/croa.png","targetList":["요요","치요","류키","김마늘"]},
         {"id":"c7","title":"오르빗","type":"CREW","reward":3,"logoUrl":"images/logos/orbit.png","targetList":["김라밍","꿈틀","다비","리카","백송","아이코","츄즈","쿠아","퀸슈아","힌콕"]},
         {"id":"c8","title":"오락실","type":"CREW","reward":3,"logoUrl":"images/logos/oraksil.png","targetList":["새잎","치유","빡룡","멍지수","랩자","히뚜","김옥독","설빈달","녹초","후룽카카","소심해","만조"]},
