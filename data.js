@@ -401,7 +401,9 @@ const SOOP_DATA = {
         {"id":"s381","name":"악어","channelUrl":"https://www.sooplive.co.kr/station/jdm1197","imgs":["images/streamers/acau.png"]},
         {"id":"s382","name":"중력","channelUrl":"https://www.sooplive.co.kr/station/vkzm14","imgs":["images/streamers/jungryeok.png"]},
         {"id":"s383","name":"수닝","channelUrl":"https://www.sooplive.co.kr/station/hko901","imgs":["images/streamers/suning.png"]},
-        {"id":"s384","name":"리타","channelUrl":"https://www.sooplive.co.kr/station/030jjj","imgs":["images/streamers/lita.png"]}
+        {"id":"s384","name":"리타","channelUrl":"https://www.sooplive.co.kr/station/030jjj","imgs":["images/streamers/lita.png"]},
+        {"id":"s385","name":"삭비","channelUrl":"https://www.sooplive.co.kr/station/sakbi1","imgs":["images/streamers/sakbi.png"]},
+        {"id":"s386","name":"곽춘식","channelUrl":"https://www.sooplive.co.kr/station/kwakchunshik","imgs":["images/streamers/gwakchunsik.webp"]}
     ],
     achievements: [
         {"id":"c1","title":"이세계아이돌","type":"CREW","reward":3,"logoUrl":"images/logos/isedol.webp","targetList":["우왁굳","아이네","징버거","릴파","주르르","고세구","비챤"]},
