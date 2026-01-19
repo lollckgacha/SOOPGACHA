@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SOOP 버츄얼 가챠</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo-area" onclick="goHome()">
+            <img src="images/soop_logo.svg" alt="SOOP" class="top-logo-img">
+        </div>
+        <div class="coin-area">
+            <img src="images/soop_coin.svg" alt="Coin" class="coin-icon">
+            <span id="user-coin">0</span>
+        </div>
+    </header>
+
+    <main id="screen-main" class="screen active">
+        <button class="settings-btn" onclick="openSettings()">⚙️</button>
+        <button class="tutorial-btn" onclick="goScreen('tutorial')">❓</button>
+
+        <div class="main-logo">
+            <img src="images/soop_logo.svg" alt="SOOP" class="main-logo-img">
+            <h1>버츄얼 가챠</h1>
+        </div>
+
+        <nav class="main-menu">
+            <button class="menu-btn primary" onclick="goScreen('gacha')">✨ 버츄얼 가챠</button>
+            <button class="menu-btn" onclick="goScreen('mycrew')">🤝 나만의 크루</button>
+            <button class="menu-btn" onclick="goScreen('pokedex')">📖 버츄얼 도감</button>
+            <button class="menu-btn" onclick="goScreen('shop')">🛒 버츄얼 상점</button>
+            <button class="menu-btn" onclick="goScreen('achievements')">🏆 도전 과제</button>
+        </nav>
+
+       <div class="notice-box">
+            <h3>📢 공지사항</h3>
+            <ul>
+                <li>본 게임은 비영리 팬 게임입니다. 등장 스트리머, 사용된 이미지, 로고 등은 요청 시 삭제될 수 있습니다.</li>
+                <li>각종 오류, 버그 제보 / 아이디어 제공 등은 이메일로 부탁드리며 언제나 환영입니다!</li>
+                <li>ex) 이분 없는것같아요! / 이분 졸업했어요... / 이분 OO크루 소속인데 반영해주세요! / 이분 사진 구 아바타에요! 등</li>
+                <li>제작자의 포토샵 실력이 좋지않아 투명배경 사진 제공은 언제나 환영입니다. </li>
+                <li>뻐꾸기 / X이봤 언제나 환영입니다. </li>
+                <li style="margin-top: 10px; font-weight: bold; color: #333;">📧 제작자 이메일: konamp63@gmail.com</li>
+            </ul>
+        </div>
+    </main>
+
+    <section id="screen-gacha" class="screen">
+        <h2>✨ 버츄얼 가챠</h2>
+        <div class="gacha-promo-card">
+            <div class="promo-text">
+                <h3 id="gacha-event-title"></h3>
+            </div>
+            <div class="promo-banner">
+                <img id="gacha-banner-img" src="" onerror="this.src=DEFAULT_IMG_URL">
+            </div>
+            <div class="promo-action">
+                <button class="action-btn" onclick="pullGacha()">💎 6회 뽑기 (6코인)</button>
+                <p class="promo-desc">* 5성 중복 시 1코인 자동 환급</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screen-mycrew" class="screen">
+        <div class="crew-header-container">
+            <img id="my-crew-logo" src="" class="crew-badge" style="display:none;" onerror="this.src=DEFAULT_IMG_URL">
+            <h2>나만의 크루</h2>
+        </div>
+        <p class="desc-small">슬롯을 눌러 멤버를 배치하세요.</p>
+        <div class="my-crew-slots" id="my-crew-grid"></div>
+        <div class="crew-actions">
+            <button class="action-btn small" onclick="openLogoSelect()">🛡️ 로고 변경</button>
+            <button class="action-btn small red" onclick="resetMyCrew()">🗑️ 슬롯 비우기</button>
+        </div>
+    </section>
+
+    <section id="screen-pokedex" class="screen">
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="renderPokedex('all'); toggleTab(this)">전체 보기</button>
+            <button class="tab-btn" onclick="renderPokedex('crew'); toggleTab(this)">크루별 보기</button>
+        </div>
+        <div class="controls-area" id="pokedex-controls"></div>
+        <div id="pokedex-list" class="card-grid"></div>
+    </section>
+
+    <section id="screen-shop" class="screen">
+        <h2>🛒 버츄얼 상점</h2>
+        <div class="tab-menu">
+            <button class="tab-btn active" onclick="renderShop('all'); toggleTab(this)">전체 보기</button>
+            <button class="tab-btn" onclick="renderShop('crew'); toggleTab(this)">크루별 보기</button>
+        </div>
+        <div class="controls-area" id="shop-controls"></div>
+        <p class="desc" style="margin-bottom:15px; color:#666;">일반 카드를 확정 구매 (30코인)</p>
+        <div id="shop-list" class="card-grid"></div>
+    </section>
+
+    <section id="screen-achievements" class="screen">
+        <div class="achieve-header">
+            <h2>🏆 도전 과제</h2>
+            <button id="btn-claim-all" class="action-btn small green" style="display:none;" onclick="claimAllRewards()">🎁 모두 받기</button>
+        </div>
+        <div id="achieve-list" class="list-view"></div>
+    </section>
+
+    <section id="screen-tutorial" class="screen">
+        <h2>❓ 튜토리얼</h2>
+        <div class="tutorial-content" style="text-align: left; padding: 20px; background: white; border-radius: 15px; line-height: 1.8;">
+            <p>1. <strong>매일 접속</strong>하면 6코인이 지급됩니다.</p>
+            <p>2. 가챠에서 중복 카드가 나오면 별 등급이<strong>1등급</strong>상승합니다.</p>
+            <p>3. 가챠에서 5성 이후에 또 중복 카드가 나오면 <strong>1코인</strong>을 돌려받습니다.</p>
+            <p>4. <strong>픽업 이벤트</strong> 기간에는 특정 멤버 확률이 올라갑니다.</p>
+            <p>5. <strong>나만의 크루</strong> 슬롯에 좋아하는 멤버를 배치해보세요.</p>
+            <p>6. 특정 크루 멤버를 모두 모으면 <strong>전용 로고</strong>를 얻을 수 있습니다.</p>
+            <p>7. 도전과제를 달성할때마다 <strong>3코인</strong>을 얻을 수 있습니다.</p>
+        </div>
+    </section>
+
+    <div id="modal-gacha-result" class="modal">
+        <div class="modal-content">
+            <h3>뽑기 결과</h3>
+            <div id="gacha-result-grid" class="card-grid small"></div>
+            <p id="gacha-refund-notice" style="color:#e74c3c; font-weight:bold; height:20px; margin:15px 0; font-size:18px;"></p>
+            <div class="gacha-btn-group">
+                <button id="btn-gacha-skip" class="btn-blue" onclick="skipGachaAnimation()">⏩ SKIP</button>
+                <button id="btn-gacha-close" class="close-btn" onclick="closeModal('modal-gacha-result')" style="display:none;">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-card-detail" class="modal">
+        <div class="modal-content card-detail-view">
+            <button class="close-btn-x" onclick="closeModal('modal-card-detail')">×</button>
+            <div class="card-item large" id="detail-card-visual">
+                <div class="card-inner">
+                    <img id="detail-card-img" src="" class="card-img" onclick="openFullImage()" onerror="this.src=DEFAULT_IMG_URL">
+                </div>
+            </div>
+            <p class="guide-text">이미지 터치 시 원본 보기</p>
+            <div class="popup-actions" style="margin-top:20px;">
+                <button id="btn-go-soop" class="soop-badge-btn" onclick="openSoopChannel()">
+                    <img src="images/soop_logo.svg" alt="Icon"> <span>방송국</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-card-select" class="modal">
+        <div class="modal-content">
+            <h3>멤버 선택</h3>
+            <div class="controls-area" style="margin-bottom: 15px;">
+                <input type="text" id="select-search" placeholder="이름 검색" onkeyup="renderSelectGrid()">
+                <div class="filter-row">
+                    <select id="select-sort" onchange="renderSelectGrid()">
+                        <option value="grade_desc">등급 높은순</option>
+                        <option value="grade_asc">등급 낮은순</option>
+                        <option value="name_asc">가나다순</option>
+                        <option value="name_desc">가나다 역순</option>
+                    </select>
+                    <select id="select-filter" onchange="renderSelectGrid()">
+                        <option value="all">전체 등급</option>
+                        <option value="5">5성</option>
+                        <option value="4">4성</option>
+                        <option value="3">3성</option>
+                        <option value="2">2성</option>
+                        <option value="1">1성</option>
+                    </select>
+                </div>
+            </div>
+            <div id="select-card-grid" class="card-grid"></div>
+            <button class="close-btn" onclick="closeModal('modal-card-select')">취소</button>
+        </div>
+    </div>
+
+    <div id="modal-full-image" class="modal full-view" onclick="closeModal('modal-full-image')">
+        <img id="full-image-src" src="" onerror="this.src=DEFAULT_IMG_URL">
+    </div>
+
+    <div id="modal-settings" class="modal">
+        <div class="modal-content">
+            <h3>📊 나의 기록실</h3>
+            <div class="stats-box">
+                <p>총 시도: <span id="stat-pulls">0</span>회</p>
+                <p>총 사용: <span id="stat-coins">0</span>코인</p>
+                <p>수집률: <span id="stat-rate">0</span>%</p>
+            </div>
+            <hr>
+            <h3>⚙️ 데이터 관리</h3>
+            <button class="btn-blue" onclick="exportSaveData()">📤 세이브 코드 복사</button>
+            <button class="btn-green" onclick="importSaveData()">📥 세이브 코드 입력</button>
+            <button class="btn-red" onclick="resetData()">⚠️ 데이터 초기화</button>
+            <button class="close-btn" onclick="closeSettings()">닫기</button>
+        </div>
+    </div>
+
+    <div id="modal-logo-select" class="modal"><div class="modal-content"><h3>로고 선택</h3><div id="select-logo-grid" class="logo-grid"></div><button class="close-btn" onclick="closeModal('modal-logo-select')">취소</button></div></div>
+
+    <div class="fixed-email-footer">konamp63@gmail.com</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
