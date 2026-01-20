@@ -25,21 +25,27 @@ let revealTimer = null;
 let isSkipping = false;
 let isDarkMode = false;
 
-// 이미지 엑박 방지 (전역)
+/* [수정] 이미지 에러 핸들링 - 전역 */
 window.addEventListener('error', function(e) {
     if (e.target.tagName === 'IMG') {
-        // 배너 이미지는 별도 처리하므로 제외 (HTML 태그 내 onerror 사용)
+        // 가챠 배너는 setupGachaUI에서 별도로 처리하므로 제외
         if(e.target.id === 'gacha-banner-img') return;
-        
-        e.target.src = 'images/soop_logo.svg';
-        e.target.onerror = null; 
+
+        // 이미지가 깨졌을 때 무한 루프 방지 (기본 이미지도 깨져있을 경우)
+        if (e.target.src.includes(DEFAULT_IMG_URL)) {
+            e.target.style.display = 'none'; // 기본 이미지도 없으면 숨김
+            return;
+        }
+
+        // 깨진 이미지를 기본 이미지로 교체
+        e.target.src = DEFAULT_IMG_URL;
     }
 }, true);
 
 window.onload = function() {
     loadData();
     checkDailyLogin();
-    setupGachaUI(); // [중요] 여기서 배너 이미지 설정
+    setupGachaUI();
     updateUI();
     if(isDarkMode) document.body.classList.add('dark-mode');
 };
@@ -97,7 +103,8 @@ function checkDailyLogin() {
     if (localStorage.getItem('last_login') !== today) {
         userCoins += 6;
         localStorage.setItem('last_login', today);
-        alert("📅 출석 보상! 6코인이 지급되었습니다.");
+        /* [수정] 텍스트 변경 */
+        alert("📅 출석 보상! 6숲코인이 지급되었습니다.");
         saveData();
     }
 }
@@ -148,23 +155,35 @@ function toggleTab(btn) {
     btn.classList.add('active');
 }
 
-/* [수정] 가챠 UI 설정 (이미지 우선 표시) */
+/* [수정] 가챠 UI 셋업 - 배너 이미지 처리 보완 */
 function setupGachaUI() {
     document.getElementById('gacha-event-title').innerHTML = GAME_SETTINGS.event_text;
     
     const bannerImg = document.getElementById('gacha-banner-img');
     const fallbackLogo = document.getElementById('gacha-fallback-logo');
 
-    if (GAME_SETTINGS.pickup_banner) {
+    // 1. 픽업 배너 설정이 있는지 확인
+    if (GAME_SETTINGS.pickup_banner && GAME_SETTINGS.pickup_banner !== "") {
         bannerImg.src = GAME_SETTINGS.pickup_banner;
-        // 중요: 이미지를 강제로 보이게 초기화 (이전에 에러나서 숨겨졌을 경우 대비)
-        bannerImg.style.display = 'block'; 
+        bannerImg.style.display = 'block';
         if(fallbackLogo) fallbackLogo.style.display = 'none';
+
+        // 2. 배너 이미지 로드 실패 시 처리 (기본 이미지로 대체하거나 로고 표시)
+        bannerImg.onerror = function() {
+            // 배너가 깨지면 숨기고 텍스트 로고를 보여줌
+            this.style.display = 'none';
+            if(fallbackLogo) fallbackLogo.style.display = 'block';
+        };
+    } else {
+        // 배너 설정이 없으면 바로 로고 표시
+        bannerImg.style.display = 'none';
+        if(fallbackLogo) fallbackLogo.style.display = 'block';
     }
 }
 
 function pullGacha() {
-    if (userCoins < 6) { alert("코인이 부족합니다!"); return; }
+    /* [수정] 텍스트 변경 */
+    if (userCoins < 6) { alert("숲코인이 부족합니다!"); return; }
     userCoins -= 6; userStats.pulls += 1; userStats.spent += 6; userBP += 1; 
     updateUI();
     document.getElementById('gacha-refund-notice').innerText = "";
@@ -203,7 +222,8 @@ function pullGacha() {
         }
     }
     saveData();
-    if(refundCount > 0) document.getElementById('gacha-refund-notice').innerText = `5성(졸업) 중복 ${refundCount}장 1코인 환급!`;
+    /* [수정] 텍스트 변경 */
+    if(refundCount > 0) document.getElementById('gacha-refund-notice').innerText = `5성(졸업) 중복 ${refundCount}장 1숲코인 환급!`;
     const grid = document.getElementById('gacha-result-grid'); grid.innerHTML = "";
     for(let i=0; i<6; i++) {
         const wrapper = document.createElement('div'); wrapper.className = "card-wrapper"; wrapper.id = `gacha-slot-${i}`;
@@ -257,7 +277,6 @@ function triggerEvolutionAnimation(item) {
     setTimeout(() => { modal.style.display = 'none'; }, 2000);
 }
 
-// ... (createCard, openCardDetail 등 기존 로직 동일) ...
 function createCard(s, onClickFunc) {
     const wrapper = document.createElement('div'); wrapper.className = "card-wrapper";
     if (ownedCards[s.id]) {
@@ -415,9 +434,10 @@ function createShopItem(s) {
 
 function tryBuyCard(id) {
     const s = SOOP_DATA.streamers.find(x => x.id === id); if (!s) return;
-    const choice = prompt(`[${s.name}] 구매 방법을 선택하세요.\n1. 100 코인\n2. 30 별풍선`, "1");
-    if (choice === "1") { if (userCoins < 100) { alert("코인이 부족합니다!"); return; } userCoins -= 100; userStats.spent += 100; } 
-    else if (choice === "2") { if (userBP < 30) { alert("별풍선이 부족합니다!"); return; } userBP -= 30; } 
+    /* [수정] 프롬프트 텍스트 변경 */
+    const choice = prompt(`[${s.name}] 구매 방법을 선택하세요.\n1. 100 숲코인\n2. 30 특별티켓`, "1");
+    if (choice === "1") { if (userCoins < 100) { alert("숲코인이 부족합니다!"); return; } userCoins -= 100; userStats.spent += 100; } 
+    else if (choice === "2") { if (userBP < 30) { alert("특별티켓이 부족합니다!"); return; } userBP -= 30; } 
     else { return; }
 
     if (ownedCards[id]) {
@@ -457,12 +477,13 @@ function renderAchievements() {
         div.style.background = (ach.priority === 3) ? "#fff9c4" : ((ach.priority === 1) ? "#f9f9f9" : "white");
         let btnHtml = (ach.priority === 1) ? '<span style="color:#999; font-size:14px;">수령 완료</span>' : (ach.priority === 3 ? `<button class="btn-green" style="width:auto; padding:8px 16px; margin:0;" onclick="claimReward('${ach.dynamicId}', ${ach.reward})">보상 받기</button>` : `<div style="text-align:right; width:80px;"><div style="font-size:12px; color:#888;">${Math.floor(ach.ratio * 100)}%</div><div style="width:100%; height:4px; background:#eee; border-radius:2px; overflow:hidden;"><div style="width:${Math.floor(ach.ratio * 100)}%; height:100%; background:var(--soop-blue);"></div></div></div>`);
         const logoSrc = ach.logoUrl ? ach.logoUrl : 'images/soop_logo.svg';
-        div.innerHTML = `<div style="display:flex; align-items:center;"><img src="${logoSrc}" style="width:45px; height:45px; border-radius:10px; border:1px solid #ddd; margin-right:15px; object-fit:contain; background:#fff;" onerror="this.src='images/soop_logo.svg'"><div><div style="font-size:16px; font-weight:bold; color:#333;">${ach.displayTitle}</div><div style="font-size:13px; color:#888; margin-top:4px;">${ach.progressText} · 💰 ${ach.reward}</div></div></div><div>${btnHtml}</div>`;
+        /* [수정] 텍스트 변경 */
+        div.innerHTML = `<div style="display:flex; align-items:center;"><img src="${logoSrc}" style="width:45px; height:45px; border-radius:10px; border:1px solid #ddd; margin-right:15px; object-fit:contain; background:#fff;" onerror="this.src='images/soop_logo.svg'"><div><div style="font-size:16px; font-weight:bold; color:#333;">${ach.displayTitle}</div><div style="font-size:13px; color:#888; margin-top:4px;">${ach.progressText} · 💰 ${ach.reward}숲코인</div></div></div><div>${btnHtml}</div>`;
         list.appendChild(div);
     });
 }
 
-function claimReward(id, r) { userCoins += r; clearedAchievements.push(id); saveData(); alert(`${r}코인 획득!`); renderAchievements(); }
+function claimReward(id, r) { userCoins += r; clearedAchievements.push(id); saveData(); alert(`${r}숲코인 획득!`); renderAchievements(); }
 function claimAllRewards() {
     let totalReward = 0; let count = 0; const currentCardCount = Object.keys(ownedCards).length; const achievements = SOOP_DATA.achievements || [];
     achievements.forEach(ach => {
@@ -487,7 +508,8 @@ function claimAllRewards() {
             }
         }
     });
-    if (count > 0) { userCoins += totalReward; saveData(); renderAchievements(); alert(`총 ${count}개의 업적을 달성하여\n💰 ${totalReward}코인을 받았습니다!`); } 
+    /* [수정] 텍스트 변경 */
+    if (count > 0) { userCoins += totalReward; saveData(); renderAchievements(); alert(`총 ${count}개의 업적을 달성하여\n💰 ${totalReward}숲코인을 받았습니다!`); } 
     else { alert("받을 보상이 없습니다."); }
 }
 
@@ -518,7 +540,8 @@ function exportSaveData() {
 function importSaveData() { 
     const code = prompt("세이브 코드를 붙여넣으세요:"); if(!code) return; 
     if (code === "gkwlgns0603") {
-        if (!confirm("관리자 모드: 모든 카드를 획득하고 코인을 무한으로 설정하시겠습니까?")) return;
+        /* [수정] 텍스트 변경 */
+        if (!confirm("관리자 모드: 모든 카드를 획득하고 숲코인을 무한으로 설정하시겠습니까?")) return;
         const allCards = {}; SOOP_DATA.streamers.forEach(s => { allCards[s.id] = { stars: 5, rank: 1, skin: 1 }; });
         const allAchievements = (SOOP_DATA.achievements || []).map(a => a.id);
         userCoins = 999999; ownedCards = allCards; clearedAchievements = allAchievements;
@@ -538,12 +561,12 @@ function importSaveData() {
     } catch(e) { alert("잘못된 세이브 코드입니다."); } 
 }
 
-/* [수정] 나만의 크루 기능: 로고 표시 로직 보완 */
+/* 나만의 크루 기능 */
 function renderMyCrew() {
     const grid = document.getElementById('my-crew-grid'); 
     grid.innerHTML = ""; 
     
-    // 로고 표시 로직: 이미지냐 텍스트냐
+    // 로고 표시 로직
     const logoImg = document.getElementById('my-crew-logo-img');
     const logoText = document.getElementById('my-crew-logo-text');
     
