@@ -16,12 +16,10 @@
 
     <header class="top-bar">
         <div class="home-btn-area" onclick="goHome()"><span>🏠</span></div>
-        <div class="logo-area" onclick="goHome()">
-            <span class="soop-text-logo" style="font-size: 24px;">SOOP</span>
-        </div>
+        <div class="logo-area" style="display:none;"></div> 
         <div class="currency-group">
             <div class="coin-area">
-                <div class="soop-coin">S</div>
+                <img src="images/soop_coin.svg" class="currency-icon" onerror="this.src='images/soop_logo.svg'">
                 <span id="user-coin">0</span>
             </div>
             <div class="coin-area bp-area">
@@ -49,12 +47,9 @@
        <div class="notice-box">
             <h3>📢 공지사항</h3>
             <ul>
-                <li>SOOP 버츄얼 가챠 - "본 게임은 본 사이트는 주식회사 숲(SOOP)과 무관하며, 독립적으로 운영되는 팬 제작 사이트입니다. </li>
-                <li>등장 스트리머, 사용된 이미지, 로고 등은 요청 시 삭제될 수 있습니다.</li>
-                <li>현재 사이트 버그 수정 및 업데이트로 인한 점검중이며, 사이트가 많이 불안정할수 있습니다.</li>
-                <li>현재 사이트 버그 수정 및 업데이트로 인한 점검중이며, 사이트가 많이 불안정할수 있습니다.</li>
-                <li>현재 사이트 버그 수정 및 업데이트로 인한 점검중이며, 사이트가 많이 불안정할수 있습니다.</li>
-                <li>현재 사이트 버그 수정 및 업데이트로 인한 점검중이며, 사이트가 많이 불안정할수 있습니다.</li>
+                <li><strong>나만의 크루</strong>: 기본 인원 6명으로 변경됨!</li>
+                <li><strong>가챠 연출</strong>: 스킵 시에도 5성(진화) 연출 재생</li>
+                <li><strong>미니게임</strong>: 250점당 1숲코인 / 배율 조정 완료</li>
                 <li style="margin-top: 10px; font-weight: bold; color: #555;">📧 제작자: konamp63@gmail.com</li>
             </ul>
         </div>
@@ -70,8 +65,8 @@
                     <span class="soop-text-logo" style="font-size: 50px;">SOOP</span>
                 </div>
             </div>
-            <div class="promo-action">s
-                <button class="action-btn" onclick="pullGacha()">💎 6회 뽑기 (6숲코인)</button>
+            <div class="promo-action">
+                <button class="action-btn" onclick="pullGacha()">💎 6회 뽑기 (6 숲코인)</button>
                 <p class="promo-desc">* 1회(6장) 뽑기 시 특별티켓(🎫) 1개 지급</p>
                 <p class="promo-desc">* 5성 중복 시 1숲코인 환급</p>
             </div>
@@ -84,19 +79,16 @@
             <div class="game-rules-box">
                 <h4>📜 게임 규칙 & 효과</h4>
                 <ul style="text-align: left; font-size: 13px; color: #555; padding-left: 20px;">
-                    <li><strong>점수</strong>: 생존 시간에 따라 1점씩 빠르게 증가!</li>
-                    <li><strong>⭐ 등급</strong>: 높을수록 점수 배율 증가 (최대 10배)</li>
+                    <li><strong>점수</strong>: 250점당 1숲코인 획득</li>
+                    <li><strong>⭐ 등급 배율</strong>: 1배 ~ 최대 2배</li>
                     <li><strong>🛡️ 5성/22성</strong>: 장애물 충돌 <strong>1회 방어</strong></li>
-                    <li><strong>🤝 크루 보너스</strong>: 크루 완성 시 동료가 공중 지원 사격!</li>
                 </ul>
             </div>
-
             <div class="mode-select-area" style="margin-bottom: 15px;">
                 <label style="font-weight:bold; margin-right:10px;">환경 선택:</label>
                 <button class="mode-btn active" id="btn-mode-pc" onclick="setGameMode('pc')">💻 PC</button>
                 <button class="mode-btn" id="btn-mode-mobile" onclick="setGameMode('mobile')">📱 모바일</button>
             </div>
-
             <div class="game-char-select" onclick="toggleGameCardSelect()">
                 <div class="selected-char-preview" id="game-char-preview"><span style="font-size:24px; color:#ccc;">?</span></div>
                 <div class="selected-char-info">
@@ -109,14 +101,12 @@
                 <div id="game-card-grid" class="card-grid small-grid"></div>
             </div>
             <div class="game-score-board"><span>최고 점수: <span id="game-best-score">0</span></span></div>
-            
             <div style="display:flex; gap:10px; justify-content:center;">
                 <button id="btn-fullscreen-toggle" class="action-btn small" onclick="toggleFullScreen()" style="display:none;">⛶ 전체화면</button>
                 <button id="btn-game-start" class="action-btn green" onclick="startGame()">▶ 게임 시작</button>
             </div>
             <p id="game-guide-text" style="font-size:12px; color:#666; margin-top:20px;">PC: 스페이스바 / 모바일: 화면 터치</p>
         </div>
-
         <div id="game-play-area">
             <canvas id="game-canvas"></canvas>
             <div class="game-hud">
@@ -135,20 +125,25 @@
             </div>
             <input type="text" id="my-crew-name" class="crew-name-input" placeholder="크루 이름을 입력하세요" onchange="saveCrewName()">
         </div>
-
         <div class="crew-control-panel" style="flex-direction: column; align-items: center;">
             <div style="display:flex; gap:15px; margin-bottom:10px;">
                 <div class="control-item">
                     <label>👥 인원:</label>
                     <select id="crew-size-select" onchange="changeCrewSize(this.value)">
-                        <option value="2">2명</option><option value="3">3명</option><option value="4">4명</option><option value="5">5명</option>
-                        <option value="6">6명</option><option value="7">7명</option><option value="8">8명</option><option value="9">9명</option>
-                        <option value="10">10명</option><option value="11">11명</option>
+                        <option value="2">2명</option>
+                        <option value="3">3명</option>
+                        <option value="4">4명</option>
+                        <option value="5">5명</option>
+                        <option value="6" selected>6명</option>
+                        <option value="7">7명</option>
+                        <option value="8">8명</option>
+                        <option value="9">9명</option>
+                        <option value="10">10명</option>
+                        <option value="11">11명</option>
                     </select>
                 </div>
                 <div class="control-item"><label>🎨 직접:</label><input type="color" id="crew-bg-color" value="#ffffff" onchange="changeCrewBgColor()"></div>
             </div>
-
             <div id="formation-select-area" style="display:none; flex-wrap:wrap; gap:5px; justify-content:center; margin-bottom:10px;">
                 <button class="formation-btn" onclick="changeFormation('1-4-4-2')">4-4-2</button>
                 <button class="formation-btn" onclick="changeFormation('1-4-3-3')">4-3-3</button>
@@ -156,7 +151,6 @@
                 <button class="formation-btn" onclick="changeFormation('1-4-2-3-1')">4-2-3-1</button>
                 <button class="formation-btn" onclick="changeFormation('1-3-5-2')">3-5-2</button>
             </div>
-
             <div class="crew-palette">
                 <div class="color-swatch" style="background:#ffffff; border:1px solid #ccc;" onclick="setCrewPresetColor('#ffffff')"></div>
                 <div class="color-swatch" style="background:#f0f2f5" onclick="setCrewPresetColor('#f0f2f5')"></div>
@@ -170,12 +164,10 @@
                 <div class="color-swatch" style="background:#e1bee7" onclick="setCrewPresetColor('#e1bee7')"></div>
             </div>
         </div>
-
         <div id="my-crew-container" class="crew-bg-container">
             <p class="desc-small" style="margin-top:10px;">슬롯을 눌러 배치 / 마우스를 올려 관리</p>
             <div class="my-crew-slots" id="my-crew-grid"></div>
         </div>
-
         <div class="crew-actions">
             <button class="action-btn small" onclick="openLogoSelect()">🛡️ 로고 변경</button>
             <button class="action-btn small red" onclick="resetMyCrew()">🗑️ 초기화</button>
@@ -214,10 +206,14 @@
         </div>
     </div>
 
-    <div id="modal-evolution" class="modal evolution-overlay" style="display:none;"><div class="evolution-content"><div id="evo-card-container" class="card-wrapper large"></div><h2 id="evo-text" class="evo-text">RANK UP!</h2></div></div>
+    <div id="modal-evolution" class="modal evolution-overlay" style="display:none;">
+        <div class="evolution-content">
+            <div id="evo-card-container" class="card-wrapper large"></div>
+            <h2 id="evo-text" class="evo-text">RANK UP!</h2>
+        </div>
+    </div>
     
     <div id="modal-settings" class="modal"><div class="modal-content"><h3>⚙️ 설정</h3><div class="stats-box"><p>총 시도: <span id="stat-pulls">0</span>회 / 사용: <span id="stat-coins">0</span>숲코인</p><p>수집률: <span id="stat-rate">0</span>%</p></div><button class="btn-blue" id="btn-darkmode" onclick="toggleDarkMode()" style="margin-top:15px;">🌙 다크 모드 켜기</button><hr><h3>💾 데이터 관리</h3><button class="btn-blue" onclick="exportSaveData()">📤 저장 코드 복사</button><button class="btn-green" onclick="importSaveData()">📥 저장 코드 입력</button><button class="btn-red" onclick="resetData()">⚠️ 데이터 초기화</button><button class="close-btn" onclick="closeSettings()">닫기</button></div></div>
-    
     <div id="modal-card-select" class="modal"><div class="modal-content"><h3>멤버 선택</h3><div class="controls-area"><input type="text" id="select-search" placeholder="검색" onkeyup="renderSelectGrid()"></div><div id="select-card-grid" class="card-grid"></div><button class="close-btn" onclick="closeModal('modal-card-select')">취소</button></div></div>
     <div id="modal-logo-select" class="modal"><div class="modal-content"><h3>로고 선택</h3><div id="select-logo-grid" class="logo-grid" style="display:flex; flex-wrap:wrap; justify-content:center;"></div><button class="close-btn" onclick="closeModal('modal-logo-select')">취소</button></div></div>
     <div id="modal-full-image" class="modal full-view" onclick="closeModal('modal-full-image')"><img id="full-image-src" src=""></div>
@@ -230,5 +226,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
