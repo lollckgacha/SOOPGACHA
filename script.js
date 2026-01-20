@@ -600,7 +600,7 @@ function exportSaveData() {
 }
 function importSaveData() { 
     const code = prompt("세이브 코드를 붙여넣으세요:"); if(!code) return; 
-    if (code === "gkwlgns0603") {
+    if (code === "wakgood0724") {
         if (!confirm("관리자 모드: 모든 카드를 획득하고 숲코인을 무한으로 설정하시겠습니까?")) return;
         const allCards = {}; SOOP_DATA.streamers.forEach(s => { allCards[s.id] = { stars: 5, rank: 1, skin: 1 }; });
         const allAchievements = (SOOP_DATA.achievements || []).map(a => a.id);
@@ -706,3 +706,4 @@ function renderSelectGrid() {
     });
 }
 function resetMyCrew() { if(confirm("배치된 모든 멤버를 해제하시겠습니까?")) { myCrew = Array(myCrewSize).fill(null); myCrewName = ""; myCrewColor = "#ffffff"; saveData(); renderMyCrew(); } }
+
