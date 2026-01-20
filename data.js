@@ -8,7 +8,7 @@ const DEFAULT_IMG_URL = "images/gacha/dkhk.png";
    ========================================================================= */
 const GAME_SETTINGS = {
     "pickup_target": "단코한끼",
-    "pickup_rate": 50,
+    "pickup_rate": 2,
     "pickup_banner": "images/gacha/dkhk.png",
     "event_text": "단코한끼 확률 업!"
 };
@@ -537,3 +537,4 @@ const SOOP_DATA = {
         {"id":"m1","title":"카드 수집","type":"COUNT","reward":3,"logoUrl":"","targetCount":10,"isInfinite":true}
     ]
 };
+
