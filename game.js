@@ -1,3 +1,5 @@
+/* game.js */
+
 let gameCanvas, ctx;
 let gameInterval;
 let gameScore = 0;
@@ -75,6 +77,7 @@ function selectGameChar(id) {
     gameChar.imgObj = new Image();
     gameChar.imgObj.src = s.imgs[0];
 
+    // [수정] 배율 적용: 1x, 1.2x, 1.5x, 1.8x, 2x
     if(gameChar.stars === 1) scoreMultiplier = 1;
     else if(gameChar.stars === 2) scoreMultiplier = 1.2;
     else if(gameChar.stars === 3) scoreMultiplier = 1.5;
@@ -334,8 +337,8 @@ function gameOver() {
     window.removeEventListener('resize', resizeCanvas);
     window.removeEventListener('keydown', handleKeyInput);
 
-    /* [수정] 텍스트 변경 */
-    const reward = Math.floor(gameScore / 100);
+    // [수정] 250점당 1숲코인
+    const reward = Math.floor(gameScore / 250);
     if (reward > 0) {
         userCoins += reward;
         alert(`게임 오버! 점수: ${Math.floor(gameScore)}\n보상으로 ${reward} 숲코인을 획득했습니다!`);
