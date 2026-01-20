@@ -19,41 +19,35 @@ body.dark-mode .stats-box { background: #333; border: 1px solid #555; }
 body.dark-mode .crew-name-input { color: white; border-bottom: 2px solid #555; }
 body.dark-mode .game-rules-box { background: #333; border-color: #555; color: #ccc; }
 
-/* [2] 상단바 */
+/* [2] 상단바 및 로고 */
 .top-bar { position:fixed; top:0; left:0; width:100%; height:60px; background:white; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; padding:0 15px; box-sizing:border-box; z-index:1000; }
 .home-btn-area { font-size:24px; cursor:pointer; width: 80px; text-align: left; } 
-.logo-area { position: absolute; left: 50%; transform: translateX(-50%); cursor:pointer; display:flex; justify-content:center; } .top-logo-img { height:28px; width:auto; }
+.logo-area { position: absolute; left: 50%; transform: translateX(-50%); cursor:pointer; display:flex; justify-content:center; }
 .currency-group { display:flex; gap:8px; width: auto; justify-content: flex-end; }
 .coin-area { font-size:13px; font-weight:700; color:#333; background:#fff8e1; padding:4px 8px; border-radius:15px; border:1px solid #f1c40f; display:flex; align-items:center; gap:4px; white-space:nowrap; }
 .bp-area { background:#e3f2fd; border:1px solid #64b5f6; }
 .coin-icon { width:20px; height:20px; object-fit:contain; }
 
-/* [추가] 코인 아이콘 (파란 동그라미 S) */
+/* [수정] 숲코인 스타일 */
 .soop-coin {
-    width: 24px; height: 24px;
-    background: var(--soop-blue); color: white;
-    border-radius: 50%;
-    display: flex; justify-content: center; align-items: center;
-    font-weight: 900; font-size: 14px; margin-right: 5px;
-    font-family: sans-serif;
+    width: 24px; height: 24px; background: var(--soop-blue); color: white;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    font-weight: 900; font-size: 14px; margin-right: 5px; font-family: sans-serif;
 }
-
-/* [추가] 텍스트 로고 스타일 */
 .soop-text-logo {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 900; color: var(--soop-blue);
+    font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: var(--soop-blue);
     line-height: 1; letter-spacing: -1px;
 }
 
 /* [3] 메뉴 */
-.main-logo { margin:20px 0 30px 0; text-align:center; } .main-logo-img { width:160px; height:auto; margin-bottom:10px; }
+.main-logo { margin:20px 0 30px 0; text-align:center; } 
 .menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:0 20px; max-width:480px; margin:0 auto 30px auto; }
 .menu-btn { width:100%; padding:15px 10px; font-size:16px; font-weight:700; border:none; border-radius:15px; background:white; box-shadow:0 4px 0 #ddd; cursor:pointer; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:80px; color:#333; transition:transform 0.1s; }
 .menu-btn:active { transform:translateY(4px); box-shadow:none; }
 .menu-btn.primary { background:var(--soop-blue); color:white; box-shadow:0 4px 0 #007bb5; font-size:18px; }
 .menu-btn.sub { background:#95a5a6; color:white; box-shadow:0 4px 0 #7f8c8d; font-size:14px; min-height:60px; }
 
-/* [4] 카드 디자인 */
+/* [4] 카드 */
 .card-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px; }
 .card-wrapper { position:relative; width:120px; cursor:pointer; transition:transform 0.2s; display:flex; flex-direction:column; align-items:center; }
 .card-wrapper:hover { transform:scale(1.05); z-index:10; }
