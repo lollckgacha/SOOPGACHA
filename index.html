@@ -1,4 +1,4 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -25,8 +25,8 @@
                 <span id="user-coin">0</span>
             </div>
             <div class="coin-area bp-area">
-                <img src="images/bp.webp" class="coin-icon" alt="B" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
-                <span style="display:none;">🎈</span> <span id="user-bp">0</span>
+                <span style="font-size: 18px; margin-right: 5px;">🎫</span>
+                <span id="user-bp">0</span>
             </div>
         </div>
     </header>
@@ -49,13 +49,10 @@
        <div class="notice-box">
             <h3>📢 공지사항</h3>
             <ul>
-                <li><strong>현재 버그수정중이라 사이트가 불안합니다. 1/20 17시 이후에 다시 이용 바랍니다!</strong></li>
-                <li><strong>현재 버그수정중이라 사이트가 불안합니다. 1/20 17시 이후에 다시 이용 바랍니다!</strong></li>
-            <li><strong>현재 버그수정중이라 사이트가 불안합니다. 1/20 17시 이후에 다시 이용 바랍니다!</strong></li>
-            <li><strong>현재 버그수정중이라 사이트가 불안합니다. 1/20 17시 이후에 다시 이용 바랍니다!</strong></li>
-            <li><strong>현재 버그수정중이라 사이트가 불안합니다. 1/20 17시 이후에 다시 이용 바랍니다!</strong></li>
-            <li><strong>현재 버그수정중이라 사이트가 불안합니다. 1/20 17시 이후에 다시 이용 바랍니다!</strong></li>
-                <li style="margin-top: 10px; font-weight: bold; color: #555;">📧 제작자 이메일: konamp63@gmail.com</li>
+                <li><strong>미니게임</strong>: PC/모바일 모드 분리 및 최적화 완료!</li>
+                <li><strong>나만의 크루</strong>: 2~11명 인원 설정 및 포메이션(11명) 지원</li>
+                <li><strong>재화 변경</strong>: 숲코인(S) / 특별티켓(🎫) 적용</li>
+                <li style="margin-top: 10px; font-weight: bold; color: #555;">📧 제작자: konamp63@gmail.com</li>
             </ul>
         </div>
     </main>
@@ -65,15 +62,15 @@
         <div class="gacha-promo-card">
             <div class="promo-text"><h3 id="gacha-event-title">픽업 이벤트</h3></div>
             <div class="promo-banner" id="promo-banner-container">
-                <img id="gacha-banner-img" src="" onerror="this.style.display='none'; document.getElementById('gacha-fallback-logo').style.display='block';">
+                <img id="gacha-banner-img" src="" style="display:none;">
                 <div id="gacha-fallback-logo" style="display:none; padding: 40px 0;">
                     <span class="soop-text-logo" style="font-size: 50px;">SOOP</span>
                 </div>
             </div>
-            <div class="promo-action">
-                <button class="action-btn" onclick="pullGacha()">💎 6회 뽑기 (6코인)</button>
-                <p class="promo-desc">* 1회(6장) 뽑기 시 별풍선 1개 지급</p>
-                <p class="promo-desc">* 5성 중복 시 1코인 환급</p>
+            <div class="promo-action">s
+                <button class="action-btn" onclick="pullGacha()">💎 6회 뽑기 (6숲코인)</button>
+                <p class="promo-desc">* 1회(6장) 뽑기 시 특별티켓(🎫) 1개 지급</p>
+                <p class="promo-desc">* 5성 중복 시 1숲코인 환급</p>
             </div>
         </div>
     </section>
@@ -84,32 +81,39 @@
             <div class="game-rules-box">
                 <h4>📜 게임 규칙 & 효과</h4>
                 <ul style="text-align: left; font-size: 13px; color: #555; padding-left: 20px;">
-                    <li><strong>기본</strong>: 장애물을 피해 달리세요. (생존 점수)</li>
-                    <li><strong>⭐ 등급 효과</strong>: 등급이 높을수록 점수 획득량 증가</li>
+                    <li><strong>점수</strong>: 생존 시간에 따라 1점씩 빠르게 증가!</li>
+                    <li><strong>⭐ 등급</strong>: 높을수록 점수 배율 증가 (최대 10배)</li>
                     <li><strong>🛡️ 5성/22성</strong>: 장애물 충돌 <strong>1회 방어</strong></li>
-                    <li><strong>🤝 크루 보너스</strong>: 크루 완성 시 동료가 공중에서 지원 사격!</li>
+                    <li><strong>🤝 크루 보너스</strong>: 크루 완성 시 동료가 공중 지원 사격!</li>
                 </ul>
             </div>
+
             <div class="mode-select-area" style="margin-bottom: 15px;">
                 <label style="font-weight:bold; margin-right:10px;">환경 선택:</label>
-                <button class="mode-btn" id="btn-mode-mobile" onclick="setGameMode('mobile')">📱 모바일</button>
                 <button class="mode-btn active" id="btn-mode-pc" onclick="setGameMode('pc')">💻 PC</button>
+                <button class="mode-btn" id="btn-mode-mobile" onclick="setGameMode('mobile')">📱 모바일</button>
             </div>
+
             <div class="game-char-select" onclick="toggleGameCardSelect()">
                 <div class="selected-char-preview" id="game-char-preview"><span style="font-size:24px; color:#ccc;">?</span></div>
-                <div class="selected-char-info"><p id="game-char-name">카드 선택</p><p id="game-char-effect" style="font-size:12px; color:#00adef;">터치하여 선택</p></div>
+                <div class="selected-char-info">
+                    <p id="game-char-name">카드 선택</p>
+                    <p id="game-char-effect" style="font-size:12px; color:#00adef;">터치하여 선택</p>
+                </div>
             </div>
             <div id="game-card-list-area" class="game-card-list-area" style="display:none;">
                 <input type="text" id="game-search" placeholder="이름 검색" onkeyup="renderGameCardList()">
                 <div id="game-card-grid" class="card-grid small-grid"></div>
             </div>
             <div class="game-score-board"><span>최고 점수: <span id="game-best-score">0</span></span></div>
+            
             <div style="display:flex; gap:10px; justify-content:center;">
                 <button id="btn-fullscreen-toggle" class="action-btn small" onclick="toggleFullScreen()" style="display:none;">⛶ 전체화면</button>
                 <button id="btn-game-start" class="action-btn green" onclick="startGame()">▶ 게임 시작</button>
             </div>
             <p id="game-guide-text" style="font-size:12px; color:#666; margin-top:20px;">PC: 스페이스바 / 모바일: 화면 터치</p>
         </div>
+
         <div id="game-play-area">
             <canvas id="game-canvas"></canvas>
             <div class="game-hud">
@@ -128,19 +132,28 @@
             </div>
             <input type="text" id="my-crew-name" class="crew-name-input" placeholder="크루 이름을 입력하세요" onchange="saveCrewName()">
         </div>
+
         <div class="crew-control-panel" style="flex-direction: column; align-items: center;">
             <div style="display:flex; gap:15px; margin-bottom:10px;">
                 <div class="control-item">
                     <label>👥 인원:</label>
                     <select id="crew-size-select" onchange="changeCrewSize(this.value)">
-                        <option value="2">2명</option><option value="3">3명</option><option value="4">4명</option><option value="5">5명</option><option value="6">6명</option><option value="7">7명</option><option value="8">8명</option><option value="9">9명</option><option value="10">10명</option><option value="11">11명</option>
+                        <option value="2">2명</option><option value="3">3명</option><option value="4">4명</option><option value="5">5명</option>
+                        <option value="6">6명</option><option value="7">7명</option><option value="8">8명</option><option value="9">9명</option>
+                        <option value="10">10명</option><option value="11">11명</option>
                     </select>
                 </div>
                 <div class="control-item"><label>🎨 직접:</label><input type="color" id="crew-bg-color" value="#ffffff" onchange="changeCrewBgColor()"></div>
             </div>
+
             <div id="formation-select-area" style="display:none; flex-wrap:wrap; gap:5px; justify-content:center; margin-bottom:10px;">
-                <button class="formation-btn" onclick="changeFormation('1-4-4-2')">4-4-2</button><button class="formation-btn" onclick="changeFormation('1-4-3-3')">4-3-3</button><button class="formation-btn" onclick="changeFormation('1-3-4-3')">3-4-3</button><button class="formation-btn" onclick="changeFormation('1-4-2-3-1')">4-2-3-1</button><button class="formation-btn" onclick="changeFormation('1-3-5-2')">3-5-2</button>
+                <button class="formation-btn" onclick="changeFormation('1-4-4-2')">4-4-2</button>
+                <button class="formation-btn" onclick="changeFormation('1-4-3-3')">4-3-3</button>
+                <button class="formation-btn" onclick="changeFormation('1-3-4-3')">3-4-3</button>
+                <button class="formation-btn" onclick="changeFormation('1-4-2-3-1')">4-2-3-1</button>
+                <button class="formation-btn" onclick="changeFormation('1-3-5-2')">3-5-2</button>
             </div>
+
             <div class="crew-palette">
                 <div class="color-swatch" style="background:#ffffff; border:1px solid #ccc;" onclick="setCrewPresetColor('#ffffff')"></div>
                 <div class="color-swatch" style="background:#f0f2f5" onclick="setCrewPresetColor('#f0f2f5')"></div>
@@ -154,11 +167,16 @@
                 <div class="color-swatch" style="background:#e1bee7" onclick="setCrewPresetColor('#e1bee7')"></div>
             </div>
         </div>
+
         <div id="my-crew-container" class="crew-bg-container">
             <p class="desc-small" style="margin-top:10px;">슬롯을 눌러 배치 / 마우스를 올려 관리</p>
             <div class="my-crew-slots" id="my-crew-grid"></div>
         </div>
-        <div class="crew-actions"><button class="action-btn small" onclick="openLogoSelect()">🛡️ 로고 변경</button><button class="action-btn small red" onclick="resetMyCrew()">🗑️ 초기화</button></div>
+
+        <div class="crew-actions">
+            <button class="action-btn small" onclick="openLogoSelect()">🛡️ 로고 변경</button>
+            <button class="action-btn small red" onclick="resetMyCrew()">🗑️ 초기화</button>
+        </div>
     </section>
 
     <section id="screen-pokedex" class="screen">
@@ -176,21 +194,13 @@
         <div style="text-align: right; padding: 0 10px 10px 10px;"><button id="btn-claim-all" class="action-btn small green" style="display:none; margin-left:auto;" onclick="claimAllRewards()">🎁 모두 받기</button></div>
         <div id="achieve-list" class="list-view"></div>
     </section>
-    <section id="screen-tutorial" class="screen">
-        <h2>❓ 튜토리얼</h2>
-        <div class="tutorial-content" style="text-align: left; padding: 20px; background: var(--modal-bg); border-radius: 15px; border: 1px solid #ddd;">
-            <p>1. 매일 접속 시 <strong>6코인</strong> 지급</p><p>2. 뽑기 1회당 <strong>별풍선 1개</strong> 적립</p><p>3. <strong>s226 양도끼</strong>는 2성 달성 시 바로 22성이 됩니다.</p><p>4. 5성 카드는 미니게임에서 <strong>충돌을 1회 방어</strong>합니다.</p><p>5. 5성 전용 이미지가 있는 카드는 도감에서 변경 가능합니다.</p>
-        </div>
-    </section>
 
     <div id="modal-gacha-result" class="modal"><div class="modal-content"><h3>뽑기 결과</h3><div id="gacha-result-grid" class="card-grid small"></div><p id="gacha-refund-notice" style="color:#e74c3c; font-weight:bold; min-height:20px; margin:15px 0;"></p><div class="gacha-btn-group"><button id="btn-gacha-skip" class="btn-blue" onclick="skipGachaAnimation()">⏩ SKIP</button><button id="btn-gacha-close" class="close-btn" onclick="closeModal('modal-gacha-result')" style="display:none;">확인</button></div></div></div>
     
     <div id="modal-card-detail" class="modal">
         <div class="modal-content card-detail-view" style="display:flex; flex-direction:column; align-items:center;">
             <button class="close-btn-x" onclick="closeModal('modal-card-detail')">×</button>
-            <div class="card-item large" id="detail-card-visual" style="margin: 20px auto;">
-                <div class="card-inner"><img id="detail-card-img" src="" class="card-img" onclick="openFullImage()"></div>
-            </div>
+            <div class="card-item large" id="detail-card-visual" style="margin: 20px auto;"><div class="card-inner"><img id="detail-card-img" src="" class="card-img" onclick="openFullImage()"></div></div>
             <button id="btn-swap-img" class="action-btn small" style="display:none; margin-top:15px;" onclick="toggleCardImage()">🔄 일러스트 변경</button>
             <div class="popup-actions" style="margin-top:20px;">
                 <button id="btn-go-soop" class="soop-badge-btn" onclick="openSoopChannel()">
@@ -202,11 +212,11 @@
     </div>
 
     <div id="modal-evolution" class="modal evolution-overlay" style="display:none;"><div class="evolution-content"><div id="evo-card-container" class="card-wrapper large"></div><h2 id="evo-text" class="evo-text">RANK UP!</h2></div></div>
-    <div id="modal-settings" class="modal"><div class="modal-content"><h3>⚙️ 설정</h3><div class="stats-box"><p>총 시도: <span id="stat-pulls">0</span>회 / 사용: <span id="stat-coins">0</span>코인</p><p>수집률: <span id="stat-rate">0</span>%</p></div><button class="btn-blue" id="btn-darkmode" onclick="toggleDarkMode()" style="margin-top:15px;">🌙 다크 모드 켜기</button><hr><h3>💾 데이터 관리</h3><button class="btn-blue" onclick="exportSaveData()">📤 저장 코드 복사</button><button class="btn-green" onclick="importSaveData()">📥 저장 코드 입력</button><button class="btn-red" onclick="resetData()">⚠️ 데이터 초기화</button><button class="close-btn" onclick="closeSettings()">닫기</button></div></div>
+    
+    <div id="modal-settings" class="modal"><div class="modal-content"><h3>⚙️ 설정</h3><div class="stats-box"><p>총 시도: <span id="stat-pulls">0</span>회 / 사용: <span id="stat-coins">0</span>숲코인</p><p>수집률: <span id="stat-rate">0</span>%</p></div><button class="btn-blue" id="btn-darkmode" onclick="toggleDarkMode()" style="margin-top:15px;">🌙 다크 모드 켜기</button><hr><h3>💾 데이터 관리</h3><button class="btn-blue" onclick="exportSaveData()">📤 저장 코드 복사</button><button class="btn-green" onclick="importSaveData()">📥 저장 코드 입력</button><button class="btn-red" onclick="resetData()">⚠️ 데이터 초기화</button><button class="close-btn" onclick="closeSettings()">닫기</button></div></div>
+    
     <div id="modal-card-select" class="modal"><div class="modal-content"><h3>멤버 선택</h3><div class="controls-area"><input type="text" id="select-search" placeholder="검색" onkeyup="renderSelectGrid()"></div><div id="select-card-grid" class="card-grid"></div><button class="close-btn" onclick="closeModal('modal-card-select')">취소</button></div></div>
-    
     <div id="modal-logo-select" class="modal"><div class="modal-content"><h3>로고 선택</h3><div id="select-logo-grid" class="logo-grid" style="display:flex; flex-wrap:wrap; justify-content:center;"></div><button class="close-btn" onclick="closeModal('modal-logo-select')">취소</button></div></div>
-    
     <div id="modal-full-image" class="modal full-view" onclick="closeModal('modal-full-image')"><img id="full-image-src" src=""></div>
 
     <div class="fixed-email-footer">konamp63@gmail.com</div>
@@ -217,6 +227,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
