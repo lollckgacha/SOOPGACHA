@@ -4260,7 +4260,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s531",
-        "name": "헤레느",
+        "name": "해레느",
         "channelUrl": "https://www.sooplive.co.kr/station/thal1713",
         "imgs": [
             "images/streamers/yuraiteu_haereneu.png"
@@ -5500,3 +5500,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
