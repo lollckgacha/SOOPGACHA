@@ -875,3 +875,12 @@ function importSaveData() { const code = prompt("세이브 코드를 붙여넣�
 function openSettings() { updateUI(); document.getElementById('modal-settings').style.display = 'flex'; }
 function closeSettings() { document.getElementById('modal-settings').style.display = 'none'; }
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+/* [기존 코드들...] */
+
+/* [추가] 패치노트 열기 함수 */
+function openPatchNotes() {
+    const modal = document.getElementById('modal-patch-notes');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
