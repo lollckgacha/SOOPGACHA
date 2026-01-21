@@ -4551,7 +4551,8 @@ const SOOP_DATA = {
         "reward": 3,
         "logoUrl": "images/logos/dns.svg",
         "targetList": [
-            "빙밍"
+            "빙밍",
+           "밀크티냠"
         ]
     },
     {
@@ -5064,3 +5065,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
