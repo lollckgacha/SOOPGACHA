@@ -26,14 +26,8 @@ body.dark-mode .game-rules-box { background: #333; border-color: #555; color: #c
 .currency-group { display:flex; gap:8px; width: auto; justify-content: flex-end; }
 .coin-area { font-size:13px; font-weight:700; color:#333; background:#fff8e1; padding:4px 8px; border-radius:15px; border:1px solid #f1c40f; display:flex; align-items:center; gap:4px; white-space:nowrap; }
 .bp-area { background:#e3f2fd; border:1px solid #64b5f6; }
-
-/* [수정] 코인 아이콘 스타일 */
 .currency-icon { width: 24px; height: 24px; margin-right: 5px; object-fit: contain; }
-
-.soop-text-logo {
-    font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: var(--soop-blue);
-    line-height: 1; letter-spacing: -1px;
-}
+.soop-text-logo { font-family: 'Noto Sans KR', sans-serif; font-weight: 900; color: var(--soop-blue); line-height: 1; letter-spacing: -1px; }
 
 /* [3] 메뉴 */
 .main-logo { margin:20px 0 30px 0; text-align:center; } 
@@ -92,45 +86,42 @@ body.dark-mode .game-rules-box { background: #333; border-color: #555; color: #c
 .overlay-btn:hover { background: #eee; }
 .overlay-btn.red { color: #e74c3c; }
 
-/* [6] 미니게임 & 전체화면 게임 */
+/* [6] 게임 컨테이너 & UI */
 .game-container { text-align:center; background:var(--modal-bg); padding:20px; border-radius:15px; max-width:650px; width: 95%; margin:0 auto; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
 #game-lobby { display: block; }
-#game-play-area.pc-mode-active {
-    display: none; position: relative; width: 100%; max-width: 800px; height: 400px; margin: 20px auto;
-    background: #f0f0f0; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); overflow: hidden; z-index: 100;
-}
-#game-play-area.pc-mode-active #game-canvas { width: 100%; height: 100%; object-fit: contain; }
-#game-play-area.mobile-mode-active {
-    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-    background: #f0f0f0; z-index: 5000; flex-direction: column; justify-content: center; align-items: center;
-}
-#game-play-area.mobile-mode-active #game-canvas { width: 100%; height: 100%; object-fit: contain; }
-.mode-btn { padding: 8px 16px; border: 2px solid #ddd; background: white; border-radius: 20px; font-weight: bold; color: #555; cursor: pointer; margin: 0 5px; }
-.mode-btn.active { border-color: var(--soop-blue); background: #e3f2fd; color: var(--soop-blue); }
-#orientation-lock { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; color: white; justify-content: center; align-items: center; text-align: center; }
-@media screen and (orientation: portrait) { body.game-active #orientation-lock { display: flex; } }
-.game-char-select { display:flex; align-items:center; gap:15px; padding:15px; border:2px solid #ddd; border-radius:15px; margin-bottom:20px; cursor:pointer; background:rgba(0,0,0,0.02); justify-content: center; }
-.selected-char-preview { width:60px; height:60px; border-radius:50%; background:#eee; overflow:hidden; display:flex; justify-content:center; align-items:center; border:2px solid var(--soop-blue); flex-shrink:0; }
-.selected-char-preview img { width:100%; height:100%; object-fit:cover; }
-.game-card-list-area { background:var(--modal-bg); border:1px solid #ddd; border-radius:10px; padding:10px; margin-bottom:15px; max-height:200px; overflow-y:auto; }
 .game-score-board { margin: 15px 0; font-size: 20px; font-weight: bold; }
-.game-hud { position: absolute; top: 10px; left: 10px; right: 10px; display: flex; justify-content: space-between; font-size: 20px; font-weight: bold; color: #333; text-shadow: 1px 1px 0 #fff; pointer-events: none; }
-.hud-item { background: rgba(255,255,255,0.7); padding: 5px 10px; border-radius: 10px; }
-.hud-quit-btn { pointer-events: auto; background: #e74c3c; color: white; border: none; padding: 5px 15px; border-radius: 10px; font-weight: bold; cursor: pointer; }
 .game-rules-box { background: #f9f9f9; padding: 15px; border-radius: 10px; border: 1px solid #eee; margin-bottom: 20px; }
 
 /* 기타 UI */
 .notice-box { margin:20px auto; width:fit-content; max-width:95%; min-width:300px; background:#fff; border:2px solid #eee; border-radius:15px; padding:20px; text-align:left; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
 .notice-box h3 { margin:0 0 10px 0; font-size:18px; color:var(--soop-blue); border-bottom:1px solid #f0f0f0; padding-bottom:10px; text-align:center; }
 .center-header { justify-content: center !important; }
+
+/* 탭 버튼 크기 및 스타일 */
 .tab-menu { display:flex; justify-content:center; gap:5px; margin-bottom:20px; background:var(--tab-bg); padding:5px; border-radius:30px; width:fit-content; margin-left:auto; margin-right:auto; }
-.tab-btn { padding:8px 25px; border:none; background:transparent; border-radius:25px; cursor:pointer; font-size:15px; font-weight:700; color:#888; transition:all 0.2s; }
+.tab-btn { padding:12px 30px; border:none; background:transparent; border-radius:25px; cursor:pointer; font-size:16px; font-weight:700; color:#888; transition:all 0.2s; white-space:nowrap; }
 .tab-btn.active { background:white; color:var(--soop-blue); box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+
 .achieve-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; padding:0 5px; width:100%; box-sizing:border-box; }
 .controls-area { width:100%; display:flex; flex-direction:column; gap:8px; margin-bottom:15px; align-items:center; }
 .filter-row { display:flex; gap:5px; width:90%; justify-content:center; }
-.controls-area input, .controls-area select { padding:10px; border:1px solid #ccc; border-radius:15px; font-family:'Noto Sans KR', sans-serif; font-size:15px; font-weight:500; box-sizing:border-box; width:90%; text-align:center; }
+
+/* 검색창 스타일 강화 */
+.controls-area input, .controls-area select { 
+    padding:14px; 
+    border:2px solid #ccc; 
+    border-radius:15px; 
+    font-family:'Noto Sans KR', sans-serif; 
+    font-size:16px; 
+    font-weight:700; 
+    box-sizing:border-box; 
+    width:90%; 
+    text-align:center; 
+    background-color: white;
+}
+.controls-area input:focus { border-color: var(--soop-blue); outline: none; }
 .controls-area select { width:50%; }
+
 .achievement-item { border-bottom:1px solid #eee; padding:15px; display:flex; justify-content:space-between; align-items:center; transition: 0.3s; }
 .crew-book-header { display:flex; align-items:center; gap:10px; padding:12px; margin-top:10px; border-radius:15px; border:1px solid #ddd; cursor:pointer; background:#fff; transition:all 0.2s; }
 .crew-book-header:hover { background:#f9f9f9; } 
@@ -151,6 +142,7 @@ body.dark-mode .game-rules-box { background: #333; border-color: #555; color: #c
 .action-btn { background:var(--soop-blue); color:white; padding:15px; border:none; border-radius:30px; font-size:20px; font-weight:800; cursor:pointer; width:100%; max-width:350px; box-shadow:0 5px 0 #007bb5; }
 .action-btn.small { width:auto; padding:10px 20px; font-size:16px; border-radius:20px; }
 .action-btn.green { background:#2ecc71; box-shadow:0 4px 0 #27ae60; width:auto; font-size:16px; padding:10px 20px; margin:0; }
+.action-btn.purple { background:#9b59b6; box-shadow:0 4px 0 #8e44ad; }
 .btn-blue, .btn-green, .btn-red { width:100%; padding:15px; border:none; border-radius:10px; margin-bottom:8px; cursor:pointer; color:white; font-size:16px; font-weight:700; }
 .btn-blue { background:var(--soop-blue); } .btn-green { background:#2ecc71; } .btn-red { background:#e74c3c; }
 .stats-box { background: #f9f9f9; border: 1px solid #eee; border-radius: 15px; padding: 15px; text-align: left; margin-bottom: 20px; }
@@ -162,14 +154,10 @@ body.dark-mode .game-rules-box { background: #333; border-color: #555; color: #c
 @keyframes flipEffect { 0% {transform:scale(0.8) rotateY(180deg); opacity:0;} 100% {transform:scale(1) rotateY(0deg); opacity:1;} }
 .card-back-design { width:100%; height:100%; background:repeating-linear-gradient(45deg, #2a2a2a, #2a2a2a 10px, #333 10px, #333 20px); display:flex; justify-content:center; align-items:center; color:#777; font-size:32px; font-weight:bold; }
 .fixed-email-footer { position:fixed; bottom:5px; left:0; width:100%; text-align:center; font-size:12px; color:#aaa; z-index:9999; pointer-events:none; font-family:sans-serif; }
-
-/* [수정] 상점 버튼 그룹 */
 .shop-btn-group { display: flex; gap: 5px; margin-top: 8px; width: 100%; }
 .shop-buy-btn { padding: 6px 0; width: 100%; border-radius: 8px; font-size: 13px; font-weight: 800; cursor: pointer; background: white; }
 .shop-buy-btn.coin { border: 2px solid var(--soop-blue); color: var(--soop-blue); }
 .shop-buy-btn.ticket { border: 2px solid #64b5f6; color: #64b5f6; }
-
-/* [수정] 진화 연출 */
 .evolution-overlay { background: rgba(0,0,0,0.95) !important; display: none; flex-direction: column; z-index: 9999; justify-content: center; align-items: center; }
 .evolution-content { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; }
 .evo-buildup { animation: buildUpEffect 2s cubic-bezier(0.6, 0.04, 0.98, 0.335) forwards; }
@@ -201,3 +189,42 @@ body.dark-mode .game-rules-box { background: #333; border-color: #555; color: #c
 .evo-text.show { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) { .menu-grid { grid-template-columns:1fr 1fr; } #gacha-result-grid { grid-template-columns:repeat(3, 1fr); gap:5px; } #gacha-result-grid .card-wrapper { width:100px; } #gacha-result-grid .card-item { width:100px; height:133px; } .crew-row .card-wrapper { width: 17vw; max-width: 90px; height: auto; } .crew-row .slot, .crew-row .card-item { width: 100%; height: 26vw; max-height: 120px; } .crew-row .slot.empty { font-size: 20px; } }
+
+#orientation-lock { display: none; }
+
+/* 퀴즈 게임 스타일 */
+.quiz-container { width: 100%; height: 100vh; height: 100dvh; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; background: var(--bg-color); position: relative; border-radius: 15px; overflow: hidden; padding-bottom: env(safe-area-inset-bottom); }
+.quiz-header { padding: 15px 20px; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; padding-top: max(15px, env(safe-area-inset-top)); }
+.quiz-timer-bar { width: 100%; height: 8px; background: #eee; border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
+#quiz-timer-fill { width: 100%; height: 100%; background: #2ecc71; transition: width 0.1s linear, background-color 0.3s; }
+.quiz-status { display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 800; color: #333; margin-top: 10px; }
+.hud-quit-btn { pointer-events: auto; background: #e74c3c; color: white; border: none; padding: 6px 14px; border-radius: 8px; font-weight: bold; font-size: 14px; cursor: pointer; position: static; box-shadow: 0 2px 0 #c0392b; }
+.hud-quit-btn:active { transform: translateY(2px); box-shadow: none; }
+.quiz-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 40px; overflow-y: auto; }
+.quiz-image-box { width: 220px; height: 220px; border-radius: 20px; background: white; border: 4px solid var(--soop-blue); overflow: hidden; margin-bottom: 20px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex-shrink: 0; }
+#quiz-image { width: 100%; height: 100%; object-fit: cover; }
+#quiz-feedback-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 100px; font-weight: 900; opacity: 0; text-shadow: 2px 2px 0 #fff; pointer-events: none; }
+.feedback-correct { animation: fadePop 0.5s forwards; color: #2ecc71; content: "O"; }
+.feedback-wrong { animation: fadePop 0.5s forwards; color: #e74c3c; content: "X"; }
+@keyframes fadePop { 0% { transform: scale(0.5); opacity: 0; } 50% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
+.quiz-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; max-width: 400px; padding-bottom: 20px; }
+.quiz-btn { background: white; border: 2px solid #ddd; border-radius: 15px; padding: 10px 5px; font-size: 16px; font-weight: 700; color: #555; cursor: pointer; transition: transform 0.1s, background-color 0.2s; word-break: keep-all; min-height: 60px; height: 100%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 0 #eee; -webkit-tap-highlight-color: transparent; user-select: none; }
+.quiz-btn:active { transform: translateY(4px); box-shadow: none; }
+@media (hover: hover) { .quiz-btn:hover { background-color: #f9f9f9; border-color: #ccc; } }
+.quiz-btn.correct { background: #2ecc71 !important; color: white; border-color: #27ae60; box-shadow: 0 4px 0 #27ae60; }
+.quiz-btn.wrong { background: #e74c3c !important; color: white; border-color: #c0392b; box-shadow: 0 4px 0 #c0392b; animation: shake 0.3s; }
+@keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 75% { transform: translateX(-5px); } 100% { transform: translateX(0); } }
+body.dark-mode .quiz-header, body.dark-mode .quiz-btn { background: #333; color: white; border-color: #555; box-shadow: 0 4px 0 #222; }
+body.dark-mode .quiz-image-box { border-color: #555; }
+body.dark-mode .quiz-timer-bar { background: #444; }
+body.dark-mode .quiz-status { color: #eee; }
+body.dark-mode .quiz-btn.correct { background: #2ecc71 !important; border-color: #27ae60; }
+body.dark-mode .quiz-btn.wrong { background: #e74c3c !important; border-color: #c0392b; }
+
+/* [NEW] 나만의 픽업 슬롯 스타일 */
+.custom-pickup-slots { display: flex; justify-content: center; gap: 15px; margin-bottom: 10px; }
+.slot-small { width: 70px; height: 70px; border-radius: 50%; background: #eee; display: flex; justify-content: center; align-items: center; cursor: pointer; border: 2px dashed #ccc; overflow: hidden; position: relative; }
+.slot-small.filled { border: 2px solid #9b59b6; background: white; }
+.slot-small img { width: 100%; height: 100%; object-fit: cover; }
+.slot-small span { font-size: 24px; color: #aaa; font-weight: bold; }
+.slot-small:hover { transform: scale(1.05); }
