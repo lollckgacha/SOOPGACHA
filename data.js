@@ -3511,7 +3511,7 @@ const SOOP_DATA = {
         "name": "카아암",
         "channelUrl": "https://www.sooplive.co.kr/station/kaam0802",
         "imgs": [
-            "images/streamers/kaaam.png"
+            "images/streamers/newkaam.png"
         ]
     },
     {
@@ -5035,7 +5035,7 @@ const SOOP_DATA = {
     },
     {
         "id": "",
-        "title": "",
+        "title": "포동포동",
         "type": "",
         "reward": 0,
         "logoUrl": ""
@@ -5065,4 +5065,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
