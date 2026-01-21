@@ -535,7 +535,7 @@ const SOOP_DATA = {
         "name": "달타",
         "channelUrl": "https://www.sooplive.co.kr/station/dalta20",
         "imgs": [
-            "images/streamers/dalta123.png"
+            "images/streamers/dalta_2.png"
         ]
     },
     {
@@ -1095,7 +1095,7 @@ const SOOP_DATA = {
         "name": "뮤즈",
         "channelUrl": "https://www.sooplive.co.kr/station/muse0116",
         "imgs": [
-            "images/streamers/newmuse.png"
+            "images/streamers/myujeu.webp"
         ]
     },
     {
@@ -3916,7 +3916,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s488",
-        "name": "우냥",
+        "name": "우낭",
         "channelUrl": "https://www.sooplive.co.kr/station/yeonwoonayng",
         "imgs": [
             "images/streamers/unyang.png"
@@ -4034,7 +4034,7 @@ const SOOP_DATA = {
             "images/streamers/seongyeol.png"
         ]
     },
-       {
+    {
         "id": "s503",
         "name": "보리담",
         "channelUrl": "https://www.sooplive.co.kr/station/bolidam",
@@ -4981,11 +4981,11 @@ const SOOP_DATA = {
         ]
     },
     {
-        "id": "",
+        "id": "c64",
         "title": "베가본드",
-        "type": "",
-        "reward": 0,
-        "logoUrl": "",
+        "type": "CREW",
+        "reward": 3,
+        "logoUrl": "images/logos/",
         "targetList": [
             "찬찬",
             "슈타",
@@ -4994,11 +4994,11 @@ const SOOP_DATA = {
         ]
     },
     {
-        "id": "",
+        "id": "c65",
         "title": "아가리",
-        "type": "",
-        "reward": 0,
-        "logoUrl": "",
+        "type": "CREW",
+        "reward": 3,
+        "logoUrl": "images/logos/",
         "targetList": [
             "한예림",
             "달체솜",
@@ -5007,11 +5007,11 @@ const SOOP_DATA = {
         ]
     },
     {
-        "id": "",
+        "id": "c66",
         "title": "오르카",
-        "type": "",
-        "reward": 0,
-        "logoUrl": "",
+        "type": "CREW",
+        "reward": 3,
+        "logoUrl": "images/logos/",
         "targetList": [
             "해마슈",
             "문다틸",
@@ -5020,11 +5020,17 @@ const SOOP_DATA = {
         ]
     },
     {
-        "id": "",
-        "title": "",
-        "type": "",
-        "reward": 0,
-        "logoUrl": ""
+        "id": "c67",
+        "title": "러키비키",
+        "type": "CREW",
+        "reward": 3,
+        "logoUrl": "images/logos/lucky.png",
+        "targetList": [
+            "주예나",
+            "부르",
+            "달해",
+            "보리담"
+        ]
     },
     {
         "id": "",
@@ -5058,6 +5064,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
-
