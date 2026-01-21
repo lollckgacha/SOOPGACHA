@@ -4033,6 +4033,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/seongyeol.png"
         ]
+    },
+       {
+        "id": "s503",
+        "name": "보리담",
+        "channelUrl": "https://www.sooplive.co.kr/station/bolidam",
+        "imgs": [
+            "images/streamers/boridam.png"
+        ]
     }
 ],
     achievements: [
@@ -5050,5 +5058,6 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
 
