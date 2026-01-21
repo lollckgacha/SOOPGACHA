@@ -1095,7 +1095,7 @@ const SOOP_DATA = {
         "name": "뮤즈",
         "channelUrl": "https://www.sooplive.co.kr/station/muse0116",
         "imgs": [
-            "images/streamers/myujeu.webp"
+            "images/streamers/newmuse.png"
         ]
     },
     {
@@ -3916,7 +3916,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s488",
-        "name": "우낭",
+        "name": "우냥",
         "channelUrl": "https://www.sooplive.co.kr/station/yeonwoonayng",
         "imgs": [
             "images/streamers/unyang.png"
@@ -5050,3 +5050,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
