@@ -375,7 +375,7 @@ const SOOP_DATA = {
         "name": "난워니",
         "channelUrl": "https://www.sooplive.co.kr/station/whiteone325",
         "imgs": [
-            "images/streamers/nanwoni_6.png"
+            "images/streamers/newnanwony.png"
         ]
     },
     {
@@ -5065,4 +5065,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
