@@ -535,7 +535,7 @@ const SOOP_DATA = {
         "name": "달타",
         "channelUrl": "https://www.sooplive.co.kr/station/dalta20",
         "imgs": [
-            "images/streamers/dalta123.png"
+            "images/streamers/dalta_2.png"
         ]
     },
     {
@@ -4195,7 +4195,6 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/jindugi.png",
         "targetList": [
             "두칠",
-            "에이레네",
             "루센",
             "슈슈슈앙",
             "지맘대로리나",
