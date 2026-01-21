@@ -200,7 +200,7 @@ function gameOver() {
     isGameRunning = false;
     clearInterval(gameInterval);
 
-    const reward = Math.floor(gameScore / 500);
+    const reward = Math.floor(gameScore / 100);
     
     let msg = `⏰ 시간 종료!\n최종 점수: ${Math.floor(gameScore)}점`;
     if (reward > 0) {
@@ -218,3 +218,4 @@ function gameOver() {
     if(typeof updateUI === 'function') updateUI(); 
     initMiniGameUI();
 }
+
