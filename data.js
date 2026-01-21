@@ -4041,6 +4041,22 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/boridam.png"
         ]
+    },
+    {
+        "id": "s504",
+        "name": "편덕희",
+        "channelUrl": "https://www.sooplive.co.kr/station/pyeondh303kr",
+        "imgs": [
+            "images/streamers/peondeokhi.png"
+        ]
+    },
+    {
+        "id": "s505",
+        "name": "김다나",
+        "channelUrl": "https://www.sooplive.co.kr/station/tjrghd1202",
+        "imgs": [
+            "images/streamers/kimdana.png"
+        ]
     }
 ],
     achievements: [
@@ -5034,25 +5050,31 @@ const SOOP_DATA = {
         ]
     },
     {
-        "id": "",
+        "id": "c68",
         "title": "포동포동",
-        "type": "",
-        "reward": 0,
-        "logoUrl": ""
+        "type": "CREW",
+        "reward": 3,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "김다나",
+            "만조",
+            "백시호",
+            "키렌"
+        ]
     },
     {
-        "id": "",
-        "title": "",
-        "type": "",
-        "reward": 0,
-        "logoUrl": ""
-    },
-    {
-        "id": "",
-        "title": "",
-        "type": "",
-        "reward": 0,
-        "logoUrl": ""
+        "id": "c69",
+        "title": "모겜동",
+        "type": "CREW",
+        "reward": 3,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "뢴트게늄",
+            "마이곰이",
+            "비챤",
+            "쿠우",
+            "코렛트"
+        ]
     },
     {
         "id": "m1",
@@ -5065,4 +5087,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
