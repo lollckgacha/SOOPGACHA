@@ -21,7 +21,7 @@ const SOOP_DATA = {
     {
         "id": "s1",
         "name": "감블러",
-        "channelUrl": "https:
+        "channelUrl": "https:https://www.sooplive.co.kr/station/9ambler",
         "imgs": [
             "images/streamers/gambl.png"
         ]
@@ -5073,3 +5073,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
