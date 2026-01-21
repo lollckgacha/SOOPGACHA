@@ -535,7 +535,7 @@ const SOOP_DATA = {
         "name": "달타",
         "channelUrl": "https://www.sooplive.co.kr/station/dalta20",
         "imgs": [
-            "images/streamers/dalta_2.png"
+            "images/streamers/dalta123.png"
         ]
     },
     {
@@ -5050,4 +5050,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
