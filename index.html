@@ -29,7 +29,7 @@
         </div>
         <nav class="menu-grid">
             <button class="menu-btn primary" onclick="goScreen('gacha')"><span style="font-size:24px;">✨</span><span>가챠 뽑기</span></button>
-            <button class="menu-btn primary" onclick="goScreen('minigame')"><span style="font-size:24px;">❓</span><span>버츄얼 맞히기</span></button>
+            <button class="menu-btn primary" onclick="goScreen('minigame')"><span style="font-size:24px;">❓</span><span>인물 퀴즈</span></button>
             <button class="menu-btn" onclick="goScreen('shop')"><span style="font-size:20px;">🛒</span><span>상점</span></button>
             <button class="menu-btn" onclick="goScreen('achievements')"><span style="font-size:20px;">🏆</span><span>도전과제</span></button>
             <button class="menu-btn" onclick="goScreen('pokedex')"><span style="font-size:20px;">📖</span><span>도감</span></button>
@@ -39,14 +39,8 @@
        <div class="notice-box">
             <h3>📢 공지사항</h3>
             <ul>
-                <li><strong> 이 사이트는 아직 미완성인 데모 사이트이며, 지속적으로 업데이트 패치 진행중입니다!</strong></li>
-                <li>SOOP 버츄얼 가챠 - "본 게임은 본 사이트는 주식회사 숲(SOOP)과 무관하며, 독립적으로 운영되는 팬 제작 사이트입니다. </li>
-                <li>등장 스트리머, 사용된 이미지, 로고 등은 요청 시 삭제될 수 있습니다.</li>
-                <li>각종 오류, 버그 제보 / 아이디어 제공 등은 이메일로 부탁드리며 언제나 환영입니다!</li>
-                <li>ex) 이분 없는것같아요! / 이분 졸업했어요... / 이분 OO크루 소속인데 반영해주세요! / 이분 사진 구 아바타에요! 등</li>
-                <li>제작자의 포토샵 실력이 좋지않아 투명배경 사진 제공은 언제나 환영입니다.</li>
-                <li>뻐꾸기 / X이봤 언제나 환영입니다.</li>
-                <li style="margin-top: 10px; font-weight: bold; color: #555;">📧 제작자: konamp63@gmail.com</li>
+                <li><strong>이 사이트는 팬 제작 사이트입니다.</strong></li>
+                <li>오류 제보 및 문의: konamp63@gmail.com</li>
             </ul>
         </div>
     </main>
@@ -61,7 +55,6 @@
                     <span class="soop-text-logo" style="font-size: 50px;">SOOP</span>
                 </div>
             </div>
-            
             <div class="promo-action">
                 <div style="display: flex; gap: 10px; justify-content: center; width: 100%;">
                     <button class="action-btn" style="flex: 1;" onclick="pullGacha()">💎 6회 뽑기</button>
@@ -75,12 +68,11 @@
 
     <section id="screen-minigame" class="screen" style="width: 100%; height: 100%; padding: 0;">
         <div id="game-lobby" class="game-container">
-            <h2>❓ 버츄얼 맞히기</h2>
+            <h2>🧠 인물 퀴즈</h2>
             <div class="game-rules-box">
                 <h4>📜 게임 규칙</h4>
                 <ul style="text-align: left; font-size: 14px; color: #555; padding-left: 20px; line-height: 1.6;">
-                    <li>제한시간(60초) 내에 버츄얼의 이름을 맞히세요!</li>
-                    <li>자신이 보유한 카드 내에서 문제가 출제됩니다!</li>
+                    <li>제한시간(60초) 내에 인물의 이름을 맞히세요!</li>
                     <li><span style="color:#2ecc71; font-weight:bold;">정답</span>: +100점 & 시간 +2초</li>
                     <li><span style="color:#e74c3c; font-weight:bold;">오답</span>: 시간 -5초 감소</li>
                     <li><strong>보상</strong>: 100점당 1 숲코인 획득</li>
@@ -103,7 +95,6 @@
                     <button class="hud-quit-btn" onclick="gameOver()">포기</button>
                 </div>
             </div>
-
             <div class="quiz-content">
                 <div class="quiz-image-box">
                     <img id="quiz-image" src="" alt="Character" onerror="this.src='images/gacha/dkhk.png'">
@@ -122,8 +113,9 @@
             </div>
             <input type="text" id="my-crew-name" class="crew-name-input" placeholder="크루 이름을 입력하세요" onchange="saveCrewName()">
         </div>
-        <div class="crew-control-panel" style="flex-direction: column; align-items: center;">
-            <div style="display:flex; gap:15px; margin-bottom:10px;">
+        
+        <div class="crew-control-panel">
+            <div class="crew-control-row">
                 <div class="control-item">
                     <label>👥 인원:</label>
                     <select id="crew-size-select" onchange="changeCrewSize(this.value)">
@@ -141,13 +133,15 @@
                 </div>
                 <div class="control-item"><label>🎨 직접:</label><input type="color" id="crew-bg-color" value="#ffffff" onchange="changeCrewBgColor()"></div>
             </div>
-            <div id="formation-select-area" style="display:none; flex-wrap:wrap; gap:5px; justify-content:center; margin-bottom:10px;">
+            
+            <div id="formation-select-area" style="display:none; flex-wrap:wrap; gap:5px; justify-content:center; margin-top:5px;">
                 <button class="formation-btn" onclick="changeFormation('1-4-4-2')">4-4-2</button>
                 <button class="formation-btn" onclick="changeFormation('1-4-3-3')">4-3-3</button>
                 <button class="formation-btn" onclick="changeFormation('1-3-4-3')">3-4-3</button>
                 <button class="formation-btn" onclick="changeFormation('1-4-2-3-1')">4-2-3-1</button>
                 <button class="formation-btn" onclick="changeFormation('1-3-5-2')">3-5-2</button>
             </div>
+
             <div class="crew-palette">
                 <div class="color-swatch" style="background:#ffffff; border:1px solid #ccc;" onclick="setCrewPresetColor('#ffffff')"></div>
                 <div class="color-swatch" style="background:#f0f2f5" onclick="setCrewPresetColor('#f0f2f5')"></div>
@@ -161,6 +155,7 @@
                 <div class="color-swatch" style="background:#e1bee7" onclick="setCrewPresetColor('#e1bee7')"></div>
             </div>
         </div>
+
         <div id="my-crew-container" class="crew-bg-container">
             <p class="desc-small" style="margin-top:10px;">슬롯을 눌러 배치 / 마우스를 올려 관리</p>
             <div class="my-crew-slots" id="my-crew-grid"></div>
@@ -173,21 +168,99 @@
 
     <section id="screen-pokedex" class="screen">
         <h2 style="text-align:center; margin-bottom:15px;">📖 도감</h2>
-        <div class="tab-menu"><button class="tab-btn active" onclick="renderPokedex('all'); toggleTab(this)">전체 보기</button><button class="tab-btn" onclick="renderPokedex('crew'); toggleTab(this)">그룹/크루별 보기</button></div>
-        <div class="controls-area" id="pokedex-controls"></div><div id="pokedex-list" class="card-grid"></div>
+        <div class="controls-area">
+            <div class="tab-menu" style="margin-bottom:10px;">
+                <button class="tab-btn active" onclick="renderPokedex('all'); toggleTab(this)">전체 보기</button>
+                <button class="tab-btn" onclick="renderPokedex('crew'); toggleTab(this)">그룹/크루별 보기</button>
+            </div>
+            
+            <div id="pokedex-controls-box" style="width:100%; display:flex; flex-direction:column; gap:10px;">
+                <input type="text" id="pokedex-search" placeholder="이름 검색" onkeyup="renderAllPokedexList(1)">
+                <div class="filter-row">
+                    <select id="pokedex-sort" onchange="renderAllPokedexList(1)">
+                        <option value="name_asc">가나다순</option>
+                        <option value="grade_desc">등급 높은순</option>
+                    </select>
+                    <select id="pokedex-filter" onchange="renderAllPokedexList(1)">
+                        <option value="all">전체 등급</option>
+                        <option value="5">5성만</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="pokedex-crew-controls" style="display:none; width:100%;">
+                <input type="text" id="crew-search" placeholder="그룹/크루 검색" onkeyup="renderCrewPokedexList()">
+                <div class="filter-row" style="margin-top:10px; justify-content:center;">
+                    <select id="pokedex-crew-sort" onchange="renderCrewPokedexList()" style="width: auto; padding: 8px; border-radius: 8px; font-size: 14px;">
+                        <option value="name_asc">가나다순</option>
+                        <option value="achievement_desc">달성도 높은순</option>
+                        <option value="achievement_asc">달성도 낮은순</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pokedex-chosung-nav" class="chosung-nav"></div>
+        <div id="pokedex-list" class="card-grid"></div>
+        
+        <div id="pokedex-pagination" class="pagination-area"></div>
     </section>
+
     <section id="screen-shop" class="screen">
         <h2 style="text-align:center; margin-bottom:15px;">🛒 상점</h2>
-        <div class="tab-menu"><button class="tab-btn active" onclick="renderShop('all'); toggleTab(this)">전체 보기</button><button class="tab-btn" onclick="renderShop('crew'); toggleTab(this)">그룹/크루별 보기</button></div>
-        <div class="controls-area" id="shop-controls"></div><div id="shop-list" class="card-grid"></div>
+        <div class="controls-area">
+            <div class="tab-menu" style="margin-bottom:10px;">
+                <button class="tab-btn active" onclick="renderShop('all'); toggleTab(this)">전체 보기</button>
+                <button class="tab-btn" onclick="renderShop('crew'); toggleTab(this)">그룹/크루별 보기</button>
+            </div>
+
+            <div id="shop-controls-box" style="width:100%;">
+                <input type="text" id="shop-search" placeholder="이름 검색" onkeyup="renderShopAll(1)">
+                <div class="filter-row" style="margin-top:10px; justify-content:center;">
+                    <select id="shop-filter" onchange="renderShopAll(1)" style="width: auto; padding: 12px; border-radius: 12px; font-size: 15px;">
+                        <option value="all">전체 보기</option>
+                        <option value="unowned">미보유만 보기</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="shop-crew-controls" style="display:none; width:100%;">
+                <input type="text" id="shop-crew-search" placeholder="그룹/크루 검색" onkeyup="renderShopCrew()">
+                <div class="filter-row" style="margin-top:10px; justify-content:center;">
+                    <select id="shop-crew-sort" onchange="renderShopCrew()" style="width: auto; padding: 8px; border-radius: 8px; font-size: 14px;">
+                        <option value="name_asc">가나다순</option>
+                        <option value="achievement_desc">달성도 높은순</option>
+                        <option value="achievement_asc">달성도 낮은순</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="shop-chosung-nav" class="chosung-nav"></div>
+        <div id="shop-list" class="card-grid"></div>
+        
+        <div id="shop-pagination" class="pagination-area"></div>
     </section>
+
     <section id="screen-achievements" class="screen">
         <div class="achieve-header center-header"><h2>🏆 도전 과제</h2></div>
-        <div style="text-align: right; padding: 0 10px 10px 10px;"><button id="btn-claim-all" class="action-btn small green" style="display:none; margin-left:auto;" onclick="claimAllRewards()">🎁 모두 받기</button></div>
+        <div style="text-align: right; padding: 0 10px 10px 10px; display:flex; justify-content:flex-end;">
+            <button id="btn-claim-all" class="action-btn small green" style="display:none;" onclick="claimAllRewards()">🎁 모두 받기</button>
+        </div>
         <div id="achieve-list" class="list-view"></div>
     </section>
 
-    <div id="modal-gacha-result" class="modal"><div class="modal-content"><h3>뽑기 결과</h3><div id="gacha-result-grid" class="card-grid small"></div><p id="gacha-refund-notice" style="color:#e74c3c; font-weight:bold; min-height:20px; margin:15px 0;"></p><div class="gacha-btn-group"><button id="btn-gacha-skip" class="btn-blue" onclick="skipGachaAnimation()">⏩ SKIP</button><button id="btn-gacha-close" class="close-btn" onclick="closeModal('modal-gacha-result')" style="display:none;">확인</button></div></div></div>
+    <div id="modal-gacha-result" class="modal">
+        <div class="modal-content type-popup">
+            <h3>뽑기 결과</h3>
+            <div id="gacha-result-grid" class="card-grid small"></div>
+            <p id="gacha-refund-notice" style="color:#e74c3c; font-weight:bold; min-height:20px; margin:15px 0;"></p>
+            <div class="gacha-btn-group">
+                <button id="btn-gacha-skip" class="btn-blue" onclick="skipGachaAnimation()">⏩ SKIP</button>
+                <button id="btn-gacha-close" class="close-btn" onclick="closeModal('modal-gacha-result')" style="display:none;">확인</button>
+            </div>
+        </div>
+    </div>
     
     <div id="modal-card-detail" class="modal">
         <div class="modal-content card-detail-view" style="display:flex; flex-direction:column; align-items:center;">
@@ -205,55 +278,99 @@
 
     <div id="modal-evolution" class="modal evolution-overlay" style="display:none;">
         <div class="evolution-content">
-            <div id="evo-card-container" class="card-wrapper large"></div>
+            <div id="evo-card-container"></div>
             <h2 id="evo-text" class="evo-text">RANK UP!</h2>
         </div>
+        <button id="btn-evo-skip" onclick="skipEvolution()">⏩ SKIP</button>
     </div>
     
-    <div id="modal-settings" class="modal"><div class="modal-content"><h3>⚙️ 설정</h3><div class="stats-box"><p>총 시도: <span id="stat-pulls">0</span>회 / 사용: <span id="stat-coins">0</span>숲코인</p><p>수집률: <span id="stat-rate">0</span>%</p></div><button class="btn-blue" id="btn-darkmode" onclick="toggleDarkMode()" style="margin-top:15px;">🌙 다크 모드 켜기</button><hr><h3>💾 데이터 관리</h3><button class="btn-blue" onclick="exportSaveData()">📤 저장 코드 복사</button><button class="btn-green" onclick="importSaveData()">📥 저장 코드 입력</button><button class="btn-red" onclick="resetData()">⚠️ 데이터 초기화</button><button class="close-btn" onclick="closeSettings()">닫기</button></div></div>
+    <div id="modal-settings" class="modal"><div class="modal-content type-popup"><h3>⚙️ 설정</h3><div class="stats-box"><p>총 시도: <span id="stat-pulls">0</span>회 / 사용: <span id="stat-coins">0</span>숲코인</p><p>수집률: <span id="stat-rate">0</span>%</p></div><button class="btn-blue" id="btn-darkmode" onclick="toggleDarkMode()" style="margin-top:15px;">🌙 다크 모드 켜기</button><hr><h3>💾 데이터 관리</h3><button class="btn-blue" onclick="exportSaveData()">📤 저장 코드 복사</button><button class="btn-green" onclick="importSaveData()">📥 저장 코드 입력</button><button class="btn-red" onclick="resetData()">⚠️ 데이터 초기화</button><button class="close-btn" onclick="closeSettings()">닫기</button></div></div>
     
     <div id="modal-card-select" class="modal">
-        <div class="modal-content">
-            <button class="close-btn-x" onclick="closeModal('modal-card-select')">×</button>
-            <h3>멤버 선택</h3>
-            <div class="controls-area"><input type="text" id="select-search" placeholder="검색" onkeyup="renderSelectGrid()"></div>
-            <div id="select-card-grid" class="card-grid"></div>
-            <button class="close-btn" onclick="closeModal('modal-card-select')">취소</button>
+        <div class="modal-content type-list">
+            <div class="modal-header">
+                <h3>멤버 선택</h3>
+                <button class="close-btn-header" onclick="closeModal('modal-card-select')">×</button>
+            </div>
+            <div class="modal-controls">
+                <div class="filter-row">
+                    <div class="filter-center">
+                        <button id="btn-select-all" class="tab-btn small active" onclick="setSelectMode('all', this)">전체</button>
+                        <button id="btn-select-crew" class="tab-btn small" onclick="setSelectMode('crew', this)">그룹별</button>
+                    </div>
+                    <div class="filter-right">
+                        <select id="select-sort" onchange="renderSelectGrid(1)" style="padding: 8px; border-radius: 8px; font-size: 14px;">
+                            <option value="name_asc">가나다순</option>
+                            <option value="grade_desc">등급 높은순</option>
+                            <option value="grade_asc">등급 낮은순</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="text" id="select-search" class="modal-search-input" placeholder="이름 검색" onkeyup="renderSelectGrid(1)">
+                <div id="select-chosung-nav" class="chosung-nav"></div>
+            </div>
+            <div class="modal-body-scroll">
+                <div id="select-card-grid" class="card-grid"></div>
+            </div>
+            <div id="select-card-pagination" class="modal-footer"></div>
         </div>
     </div>
     
     <div id="modal-logo-select" class="modal">
-        <div class="modal-content">
-            <button class="close-btn-x" onclick="closeModal('modal-logo-select')">×</button>
-            <h3>로고 선택</h3>
-            <div id="select-logo-grid" class="logo-grid" style="display:flex; flex-wrap:wrap; justify-content:center;"></div>
-            <button class="close-btn" onclick="closeModal('modal-logo-select')">취소</button>
+        <div class="modal-content type-list">
+            <div class="modal-header">
+                <h3>로고 선택</h3>
+                <button class="close-btn-header" onclick="closeModal('modal-logo-select')">×</button>
+            </div>
+            <div class="modal-body-scroll">
+                <div id="select-logo-grid" class="logo-grid" style="display:flex; flex-wrap:wrap; justify-content:center;"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" onclick="closeModal('modal-logo-select')">취소</button>
+            </div>
         </div>
     </div>
 
     <div id="modal-custom-pickup" class="modal">
-        <div class="modal-content">
-            <button class="close-btn-x" onclick="closeModal('modal-custom-pickup')">×</button>
-            <h3>💖 나만의 확률업</h3>
-            <p style="font-size:13px; color:#666; margin-bottom:15px;">
-                선택한 3명의 등장 확률이<br>
-                <span style="color:#9b59b6; font-weight:bold;">이벤트 픽업 대상과 동일하게</span> 증가합니다!
-            </p>
-            
-            <div class="custom-pickup-slots" id="custom-pickup-selected-area">
+        <div class="modal-content type-list">
+            <div class="modal-header">
+                <h3>💖 나만의 확률업</h3>
+                <button class="close-btn-header" onclick="closeModal('modal-custom-pickup')">×</button>
+            </div>
+            <div class="modal-controls">
+                <p style="font-size:13px; color:#666; margin-bottom:15px;">
+                    선택한 3명의 등장 확률이<br>
+                    <span style="color:#9b59b6; font-weight:bold;">이벤트 픽업 대상과 동일하게</span> 증가합니다!
+                </p>
+                <div class="custom-pickup-slots" id="custom-pickup-selected-area"></div>
+                
+                <div class="filter-row">
+                    <div class="filter-center">
+                        <button id="btn-cp-all" class="tab-btn small active" onclick="setCustomPickupMode('all', this)">전체</button>
+                        <button id="btn-cp-crew" class="tab-btn small" onclick="setCustomPickupMode('crew', this)">그룹별</button>
+                    </div>
+                    <div class="filter-right">
+                        <select id="custom-pickup-sort" onchange="renderCustomPickupGrid(1)" style="width: auto; padding: 8px; border-radius: 8px; font-size: 14px;">
+                            <option value="name_asc">가나다순</option>
+                            <option value="grade_desc">등급 높은순</option>
+                            <option value="grade_asc">등급 낮은순</option>
+                        </select>
+                    </div>
                 </div>
 
-            <div class="controls-area" style="margin-top:20px;">
-                <input type="text" id="custom-pickup-search" placeholder="이름 검색" onkeyup="renderCustomPickupGrid()">
+                <input type="text" id="custom-pickup-search" class="modal-search-input" placeholder="이름 검색" onkeyup="renderCustomPickupGrid(1)">
+                <div id="custom-pickup-chosung-nav" class="chosung-nav"></div>
             </div>
-            <div id="custom-pickup-grid" class="card-grid" style="height:300px; overflow-y:auto; border:1px solid #eee; border-radius:10px; padding:10px;"></div>
-            <button class="close-btn" onclick="closeModal('modal-custom-pickup')">닫기</button>
+            <div class="modal-body-scroll">
+                <div id="custom-pickup-grid" class="card-grid"></div>
+            </div>
+            <div id="custom-pickup-pagination" class="modal-footer"></div>
         </div>
     </div>
     
     <div id="modal-full-image" class="modal full-view" onclick="closeModal('modal-full-image')"><img id="full-image-src" src=""></div>
 
-    <div class="fixed-email-footer">konamp63@gmail.com</div>
+    <div class="fixed-email-footer">Made by SSG_랜더스</div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
     <script src="data.js"></script>
@@ -261,5 +378,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
