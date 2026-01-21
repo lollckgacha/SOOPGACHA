@@ -95,7 +95,7 @@ const SOOP_DATA = {
         "name": "고미호",
         "channelUrl": "https://www.sooplive.co.kr/station/miome3",
         "imgs": [
-            "images/streamers/gomiho_3.png"
+            "images/streamers/newgomiho.png"
         ]
     },
     {
@@ -5065,3 +5065,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
