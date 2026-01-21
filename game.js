@@ -1,4 +1,4 @@
-/* game.js - 인물 퀴즈 (수정됨: 강제 종료 기능 추가) */
+/* game.js - 인물 퀴즈 (보유 카드 우선 출제 적용) */
 
 let gameInterval;
 let gameScore = 0;
@@ -53,7 +53,7 @@ function startGame() {
     loadNextQuestion();
 }
 
-/* [NEW] 화면 이동 시 게임을 조용히 종료하는 함수 */
+/* 화면 이동 시 게임을 조용히 종료하는 함수 */
 function exitMiniGame() {
     if (!isGameRunning) return;
     
@@ -73,22 +73,35 @@ function loadNextQuestion() {
     feedback.innerText = "";
     feedback.className = "";
 
-    // 1. 정답 데이터 뽑기
+    // [수정] 데이터 풀 설정 (보유 카드 우선)
     const totalStreamers = SOOP_DATA.streamers;
-    if(!totalStreamers || totalStreamers.length < 4) {
-        alert("데이터가 부족하여 게임을 실행할 수 없습니다.");
-        gameOver();
-        return;
-    }
+    const myCardIds = Object.keys(ownedCards); // 보유한 카드 ID 목록
     
-    const answerIdx = Math.floor(Math.random() * totalStreamers.length);
-    currentAnswer = totalStreamers[answerIdx];
+    // 보유 카드가 있으면 해당 카드들만 필터링하여 후보군 생성
+    let candidatePool = [];
+    if (myCardIds.length > 0) {
+        candidatePool = totalStreamers.filter(s => ownedCards[s.id]);
+    }
+
+    // 예외 처리: 보유 카드가 아예 없으면 전체 풀 사용
+    if (candidatePool.length === 0) {
+        candidatePool = totalStreamers;
+    }
+
+    // 1. 정답 데이터 뽑기 (후보군 내에서)
+    const answerIdx = Math.floor(Math.random() * candidatePool.length);
+    currentAnswer = candidatePool[answerIdx];
 
     // 2. 오답 보기 3개 뽑기
+    // *중요*: 보유 카드가 4장 미만이면 오답 보기는 전체 풀에서 가져옴 (그래야 4지선다가 가능)
+    let wrongPool = (candidatePool.length >= 4) ? candidatePool : totalStreamers;
+
     let options = [currentAnswer];
     while (options.length < 4) {
-        const rIdx = Math.floor(Math.random() * totalStreamers.length);
-        const wrong = totalStreamers[rIdx];
+        const rIdx = Math.floor(Math.random() * wrongPool.length);
+        const wrong = wrongPool[rIdx];
+        
+        // 이미 보기에 없고, 이름이 정답과 다른 경우 추가
         if (!options.find(o => o.id === wrong.id) && wrong.name !== currentAnswer.name) {
             options.push(wrong);
         }
@@ -102,10 +115,20 @@ function loadNextQuestion() {
 
     // 4. UI 렌더링
     const imgElem = document.getElementById('quiz-image');
+    // 데이터에 이미지가 있는지 확인, 없으면 기본 이미지
     if(currentAnswer.imgs && currentAnswer.imgs.length > 0) {
-        imgElem.src = currentAnswer.imgs[0];
+        // [추가] 스킨 적용 (보유 카드라면 스킨 확인)
+        let displayImg = currentAnswer.imgs[0];
+        if (ownedCards[currentAnswer.id]) {
+            const info = ownedCards[currentAnswer.id];
+            // 5성 이상이고 스킨2번(specialImg) 적용 중이면 그 이미지 사용
+            if (currentAnswer.specialImg && info.skin === 2) {
+                displayImg = currentAnswer.specialImg;
+            }
+        }
+        imgElem.src = displayImg;
     } else {
-        imgElem.src = "images/soop_logo.svg";
+        imgElem.src = "images/gacha/dkhk.png";
     }
     
     const btnGrid = document.getElementById('quiz-options');
@@ -200,6 +223,7 @@ function gameOver() {
     isGameRunning = false;
     clearInterval(gameInterval);
 
+    // [수정] 100점당 1숲코인
     const reward = Math.floor(gameScore / 100);
     
     let msg = `⏰ 시간 종료!\n최종 점수: ${Math.floor(gameScore)}점`;
@@ -218,4 +242,3 @@ function gameOver() {
     if(typeof updateUI === 'function') updateUI(); 
     initMiniGameUI();
 }
-
