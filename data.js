@@ -8,7 +8,7 @@ const DEFAULT_IMG_URL = "images/soop_logo.svg";
    ========================================================================= */
 const GAME_SETTINGS = {
     "pickup_target": "이세계아이돌",
-    "pickup_rate": 5,
+    "pickup_rate": 3,
     "pickup_banner": "images/gacha/isedolban.webp",
     "event_text": "이세계아이돌 확률 업!"
 };
@@ -5500,4 +5500,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
