@@ -4041,14 +4041,6 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/boridam.png"
         ]
-    },
-    {
-        "id": "s504",
-        "name": "편덕희",
-        "channelUrl": "https://www.sooplive.co.kr/station/pyeondh303kr",
-        "imgs": [
-            "images/streamers/peondeokhi.png"
-        ]
     }
 ],
     achievements: [
@@ -5073,4 +5065,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
