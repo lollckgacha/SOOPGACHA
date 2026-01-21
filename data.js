@@ -375,7 +375,7 @@ const SOOP_DATA = {
         "name": "난워니",
         "channelUrl": "https://www.sooplive.co.kr/station/whiteone325",
         "imgs": [
-            "images/streamers/newnanwony.png"
+            "images/streamers/nanwoni_6.png"
         ]
     },
     {
@@ -3692,10 +3692,10 @@ const SOOP_DATA = {
     },
     {
         "id": "s460",
-        "name": "차투리",
-        "channelUrl": "https://www.sooplive.co.kr/station/hololoolu/",
+        "name": "두미",
+        "channelUrl": "https://www.sooplive.co.kr/station/hika12",
         "imgs": [
-            "images/streamers/chaturi.png"
+            "images/streamers/dumi.png"
         ]
     },
     {
@@ -4552,7 +4552,7 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/dns.svg",
         "targetList": [
             "빙밍",
-           "밀크티냠"
+            "밀크티냠"
         ]
     },
     {
@@ -5065,5 +5065,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
