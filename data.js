@@ -5067,7 +5067,7 @@ const SOOP_DATA = {
         "title": "모겜동",
         "type": "CREW",
         "reward": 3,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/mogame.png",
         "targetList": [
             "뢴트게늄",
             "마이곰이",
@@ -5087,3 +5087,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
