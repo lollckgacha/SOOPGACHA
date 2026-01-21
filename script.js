@@ -1,13 +1,13 @@
+/* script.js - 나만의 확률업 기능 및 상점 정렬 적용 */
+
 /* 전역 변수 */
 let userCoins = 300; 
 let userBP = 0; 
 let ownedCards = {}; 
-// [수정] 기본값 6명
 let myCrew = Array(6).fill(null); 
 let myCrewLogo = 'default'; 
 let myCrewName = ""; 
 let myCrewColor = "#ffffff"; 
-// [수정] 기본값 6명
 let myCrewSize = 6; 
 let currentFormationKey = '1-4-3-3'; 
 const FORMATIONS = {
@@ -17,6 +17,9 @@ const FORMATIONS = {
     '1-4-2-3-1': [1, 4, 2, 3, 1],
     '1-3-5-2': [1, 3, 5, 2]
 };
+
+// [NEW] 나만의 확률업 리스트 (최대 3명 ID 저장)
+let customPickupList = [];
 
 let gachaResultsTemp = [];
 let revealIndex = 0;
@@ -29,7 +32,7 @@ let revealTimer = null;
 let isSkipping = false;
 let isDarkMode = false;
 
-/* [수정] 이미지 에러 핸들링 */
+/* 이미지 에러 핸들링 */
 window.addEventListener('error', function(e) {
     if (e.target.tagName === 'IMG') {
         if(e.target.id === 'gacha-banner-img') return;
@@ -57,6 +60,7 @@ function saveData() {
         crewSize: myCrewSize, formation: currentFormationKey,
         achievements: clearedAchievements, 
         stats: userStats, dark: isDarkMode, bestScore: gameBestScore,
+        customPickup: customPickupList, // [NEW] 저장
         lastLogin: localStorage.getItem('last_login')
     };
     localStorage.setItem('soop_save_final_v15', JSON.stringify(data));
@@ -78,11 +82,9 @@ function loadData() {
                 ownedCards = data.d ? {} : (data.cards || {});
                 if(data.d) { for (const [id, stars] of Object.entries(data.d)) ownedCards[id] = { rank: 1, skin: 1, stars: stars }; }
                 
-                // [수정] 기본 로드 로직: 저장된 값이 없으면 6명으로 설정
                 myCrewSize = data.crewSize || 6;
                 myCrew = data.cr || data.crew || Array(6).fill(null);
                 
-                // 크루 배열 길이 보정
                 if (myCrew.length < myCrewSize) while(myCrew.length < myCrewSize) myCrew.push(null);
                 else if (myCrew.length > myCrewSize) myCrew = myCrew.slice(0, myCrewSize);
 
@@ -95,6 +97,10 @@ function loadData() {
                 userStats = data.s || data.stats || { pulls: 0, spent: 0 };
                 isDarkMode = data.dark || false;
                 if(typeof gameBestScore !== 'undefined') gameBestScore = data.bestScore || 0;
+                
+                // [NEW] 나만의 픽업 데이터 로드
+                customPickupList = data.customPickup || [];
+
                 localStorage.setItem('last_login', data.t || data.lastLogin);
             }
         } catch(e) { console.error("로드 실패", e); userCoins = 300; }
@@ -131,6 +137,10 @@ function updateUI() {
     document.getElementById('stat-rate').innerText = rate;
     const dmBtn = document.getElementById('btn-darkmode');
     if(dmBtn) dmBtn.innerText = isDarkMode ? "☀️ 라이트 모드 켜기" : "🌙 다크 모드 켜기";
+    
+    // [NEW] 나만의 픽업 버튼 텍스트 업데이트
+    const pickupCountBtn = document.getElementById('custom-pickup-count');
+    if(pickupCountBtn) pickupCountBtn.innerText = `(${customPickupList.length}/3)`;
 }
 
 function toggleDarkMode() {
@@ -141,13 +151,21 @@ function toggleDarkMode() {
 }
 
 function goHome() { goScreen('main'); }
+
 function goScreen(id) {
+    if (id !== 'minigame') {
+        if(typeof exitMiniGame === 'function') {
+            exitMiniGame();
+        }
+    }
+
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     if (id === 'pokedex') renderPokedex('all');
     if (id === 'mycrew') renderMyCrew();
     if (id === 'shop') renderShop();
     if (id === 'achievements') renderAchievements();
     if (id === 'minigame') initMiniGameUI();
+    
     const target = document.getElementById('screen-' + id);
     if(target) target.classList.add('active');
 }
@@ -186,11 +204,20 @@ function pullGacha() {
     isSkipping = false; gachaResultsTemp = []; let refundCount = 0;
 
     const achievements = SOOP_DATA.achievements || [];
-    const pickupTargetList = achievements.filter(a => a.title.includes(GAME_SETTINGS.pickup_target)).flatMap(a => a.targetList); 
+    // 기존 이벤트 타겟
+    const eventTargetList = achievements.filter(a => a.title.includes(GAME_SETTINGS.pickup_target)).flatMap(a => a.targetList); 
+    
     let totalWeight = 0;
     const pool = SOOP_DATA.streamers.map(s => {
-        const weight = pickupTargetList.includes(s.name) ? GAME_SETTINGS.pickup_rate : 1;
-        totalWeight += weight; return { ...s, weight: weight };
+        // [수정] 이벤트 대상이거나 나만의 픽업 대상이면 확률 증가
+        const isEventTarget = eventTargetList.includes(s.name);
+        const isCustomTarget = customPickupList.includes(s.id);
+        
+        // 두 조건 중 하나라도 만족하면 픽업 확률 적용 (중복 적용은 안됨)
+        const weight = (isEventTarget || isCustomTarget) ? GAME_SETTINGS.pickup_rate : 1;
+        
+        totalWeight += weight; 
+        return { ...s, weight: weight };
     });
 
     for (let i = 0; i < 6; i++) {
@@ -440,14 +467,21 @@ function renderShop(mode) {
         renderShopCrew();
     }
 }
+
+/* [수정] 상점 전체보기 가나다순 정렬 적용 */
 function renderShopAll() {
     const list = document.getElementById('shop-list');
     const searchInput = document.getElementById('shop-search');
     const search = searchInput ? searchInput.value.toLowerCase() : "";
     list.innerHTML = "";
     let targets = SOOP_DATA.streamers.filter(s => s.name.toLowerCase().includes(search));
+    
+    // 가나다순 정렬 추가
+    targets.sort((a, b) => a.name.localeCompare(b.name));
+
     targets.forEach(s => list.appendChild(createShopItem(s)));
 }
+
 function renderShopCrew() {
     const list = document.getElementById('shop-list');
     const searchInput = document.getElementById('shop-crew-search');
@@ -467,6 +501,7 @@ function renderShopCrew() {
             <div class="crew-book-header" onclick="this.nextElementSibling.classList.toggle('active')">
                 <img src="${crew.logoUrl}" class="crew-book-logo" onerror="this.src=DEFAULT_IMG_URL" style="margin-right:10px;">
                 <div class="crew-book-title">${crew.title}</div>
+                <span>▼</span>
             </div>`;
         const body = document.createElement('div'); body.className = `crew-book-body ${shouldExpand ? 'active' : ''}`;
         members.forEach(s => body.appendChild(createShopItem(s)));
@@ -696,7 +731,11 @@ function renderSelectGrid() {
     list = list.filter(c => c.name.toLowerCase().includes(search));
     list.forEach(c => {
         const wrapper = document.createElement('div'); wrapper.className = "card-wrapper";
-        wrapper.innerHTML = `<div class="card-item star-${c.stars}"><div class="card-inner"><img src="${c.imgs[0]}" class="card-img"></div></div>`;
+        wrapper.innerHTML = `
+            <div class="card-item star-${c.stars}">
+                <div class="card-inner"><img src="${c.imgs[0]}" class="card-img"></div>
+                <div class="card-txt card-name">${c.name}</div>
+            </div>`;
         wrapper.onclick = () => {
             const isAlreadyPlaced = myCrew.some((id, index) => id === c.id && index !== currentTargetSlotIndex);
             if (isAlreadyPlaced) { alert("이미 배치된 멤버입니다."); return; }
@@ -707,3 +746,99 @@ function renderSelectGrid() {
 }
 function resetMyCrew() { if(confirm("배치된 모든 멤버를 해제하시겠습니까?")) { myCrew = Array(myCrewSize).fill(null); myCrewName = ""; myCrewColor = "#ffffff"; saveData(); renderMyCrew(); } }
 
+/* [NEW] 나만의 확률업 기능 관련 */
+function openCustomPickupModal() {
+    const modal = document.getElementById('modal-custom-pickup');
+    modal.style.display = 'flex';
+    renderCustomPickupSlots();
+    renderCustomPickupGrid();
+}
+
+function renderCustomPickupSlots() {
+    const area = document.getElementById('custom-pickup-selected-area');
+    area.innerHTML = "";
+    
+    // 3개의 슬롯 생성
+    for(let i=0; i<3; i++) {
+        const id = customPickupList[i]; // 저장된 ID
+        const slot = document.createElement('div');
+        
+        if(id) {
+            // 선택된 스트리머가 있을 때
+            const s = SOOP_DATA.streamers.find(x => x.id === id);
+            if(s) {
+                slot.className = "slot-small filled";
+                slot.innerHTML = `<img src="${s.imgs[0]}" onerror="this.src=DEFAULT_IMG_URL">`;
+                slot.onclick = () => removeCustomPickup(id); // 클릭 시 삭제
+            } else {
+                // 데이터 오류 등으로 못 찾을 경우 초기화
+                customPickupList.splice(i, 1);
+                saveData();
+                renderCustomPickupSlots();
+                return;
+            }
+        } else {
+            // 비어있을 때
+            slot.className = "slot-small";
+            slot.innerHTML = `<span>+</span>`;
+        }
+        area.appendChild(slot);
+    }
+    updateUI(); // 카운트 갱신
+}
+
+function renderCustomPickupGrid() {
+    const grid = document.getElementById('custom-pickup-grid');
+    const search = document.getElementById('custom-pickup-search').value.toLowerCase();
+    grid.innerHTML = "";
+    
+    let targets = SOOP_DATA.streamers.filter(s => s.name.toLowerCase().includes(search));
+    
+    // 가나다순 정렬
+    targets.sort((a, b) => a.name.localeCompare(b.name));
+
+    targets.forEach(s => {
+        const isSelected = customPickupList.includes(s.id);
+        const wrapper = document.createElement('div');
+        wrapper.className = "card-wrapper";
+        
+        // 선택된 상태면 스타일 다르게 (투명도 등)
+        const opacityStyle = isSelected ? "opacity: 0.4;" : "";
+        
+        // 카드 껍데기만 사용 (star-1 스타일 활용)
+        wrapper.innerHTML = `
+            <div class="card-item star-1" style="${opacityStyle}">
+                <div class="card-inner"><img src="${s.imgs[0]}" class="card-img" onerror="this.src=DEFAULT_IMG_URL"></div>
+                <div class="card-txt card-name">${s.name}</div>
+            </div>`;
+            
+        wrapper.onclick = () => {
+            if(isSelected) {
+                removeCustomPickup(s.id);
+            } else {
+                addCustomPickup(s.id);
+            }
+        };
+        grid.appendChild(wrapper);
+    });
+}
+
+function addCustomPickup(id) {
+    if(customPickupList.length >= 3) {
+        alert("최대 3명까지만 선택할 수 있습니다.");
+        return;
+    }
+    if(!customPickupList.includes(id)) {
+        customPickupList.push(id);
+        saveData();
+        renderCustomPickupSlots();
+        renderCustomPickupGrid();
+    }
+}
+
+function removeCustomPickup(id) {
+    customPickupList = customPickupList.filter(x => x !== id);
+    saveData();
+    renderCustomPickupSlots();
+    renderCustomPickupGrid();
+}
