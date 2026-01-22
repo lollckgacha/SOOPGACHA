@@ -4497,6 +4497,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/yusangchu.png"
         ]
+     },
+    {
+        "id": "s561",
+        "name": "마리별",
+        "channelUrl": "https://www.sooplive.co.kr/station/maribyeol",
+        "imgs": [
+            "images/streamers/maribyeol.png"
+        ]
     }
 ],
     achievements: [
@@ -5598,3 +5606,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
