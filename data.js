@@ -5593,17 +5593,7 @@ const SOOP_DATA = {
             "도깨비루딘"
         ]
     },
-    {
-        "id": "c76",
-        "title": "헤리스",
-        "type": "CREW",
-        "reward": 6,
-        "logoUrl": "images/logos/",
-        "targetList": [
-            "헤스",
-            "리리스",
-        ]
-    },
+    
       
     {
         "id": "m1",
@@ -5616,5 +5606,6 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
 
