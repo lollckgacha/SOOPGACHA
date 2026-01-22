@@ -4449,6 +4449,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/jeongpupu.png"
         ]
+    },
+    {
+        "id": "s555",
+        "name": "라로",
+        "channelUrl": "https://www.sooplive.co.kr/station/larothy",
+        "imgs": [
+            "images/streamers/ralothy.png"
+        ]
     }
 ],
     achievements: [
@@ -5540,3 +5548,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
