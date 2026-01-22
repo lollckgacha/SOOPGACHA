@@ -484,7 +484,16 @@ function renderAllPokedexList(page = 1) {
     const search = document.getElementById('pokedex-search').value.toLowerCase();
     const sort = document.getElementById('pokedex-sort').value; const filter = document.getElementById('pokedex-filter').value;
     let targets = SOOP_DATA.streamers.filter(s => s.name.toLowerCase().includes(search));
-    if (filter !== 'all') { targets = targets.filter(s => { const info = ownedCards[s.id]; return info && info.stars == filter; }); }
+   if (filter === 'unowned') {
+    // 미보유 카드만 보기
+    targets = targets.filter(s => !ownedCards[s.id]);
+} else if (filter !== 'all') {
+    // 특정 등급(5성 등)만 보기
+    targets = targets.filter(s => { 
+        const info = ownedCards[s.id]; 
+        return info && info.stars == filter; 
+    });
+}
     if (currentPokedexChosung !== '전체') { targets = targets.filter(s => getInitialSound(s.name) === currentPokedexChosung); }
     targets.sort((a, b) => { const infoA = ownedCards[a.id] || { stars: 0 }; const infoB = ownedCards[b.id] || { stars: 0 }; if (sort === 'grade_desc') return infoB.stars - infoA.stars; return a.name.localeCompare(b.name); });
     const startIndex = (page - 1) * ITEMS_PER_PAGE; const endIndex = startIndex + ITEMS_PER_PAGE; const pageItems = targets.slice(startIndex, endIndex);
@@ -892,5 +901,6 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
 
 
