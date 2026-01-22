@@ -3916,7 +3916,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s488",
-        "name": "우낭",
+        "name": "우냥",
         "channelUrl": "https://www.sooplive.co.kr/station/yeonwoonayng",
         "imgs": [
             "images/streamers/unyang.png"
@@ -4452,27 +4452,59 @@ const SOOP_DATA = {
     },
     {
         "id": "s555",
-        "name": "라로",
+        "name": "라로시",
         "channelUrl": "https://www.sooplive.co.kr/station/larothy",
         "imgs": [
             "images/streamers/ralothy.png"
         ]
     },
-   {
+    {
         "id": "s556",
         "name": "도화",
         "channelUrl": "https://www.sooplive.co.kr/station/ringbyul",
         "imgs": [
             "images/streamers/dohwa.png"
         ]
-   }
+    },
+    {
+        "id": "s557",
+        "name": "도깨비루딘",
+        "channelUrl": "https://www.sooplive.co.kr/station/xxxx922",
+        "imgs": [
+            "images/streamers/rudin.png"
+        ]
+    },
+    {
+        "id": "s558",
+        "name": "베쿠",
+        "channelUrl": "https://www.sooplive.co.kr/station/bekuku",
+        "imgs": [
+            "images/streamers/beku.png"
+        ]
+    },
+    {
+        "id": "s559",
+        "name": "도히짠",
+        "channelUrl": "https://www.sooplive.co.kr/station/doheezzan",
+        "imgs": [
+            "images/streamers/dohijjan.png"
+        ]
+    },
+    {
+        "id": "s560",
+        "name": "유상츄",
+        "channelUrl": "https://www.sooplive.co.kr/station/hiyam2411",
+        "imgs": [
+            "images/streamers/yusangchu.png"
+        ]
+    }
 ],
     achievements: [
     {
         "id": "c1",
         "title": "이세계아이돌",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/isedol.webp",
         "targetList": [
             "우왁굳",
@@ -4488,7 +4520,7 @@ const SOOP_DATA = {
         "id": "c2",
         "title": "이브닛",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/ivnit.webp",
         "targetList": [
             "u32",
@@ -4502,7 +4534,7 @@ const SOOP_DATA = {
         "id": "c3",
         "title": "단코한끼",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/danco.png",
         "targetList": [
             "단츄",
@@ -4515,7 +4547,7 @@ const SOOP_DATA = {
         "id": "c4",
         "title": "플랜비",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/planb.png",
         "targetList": [
             "한세긴",
@@ -4528,7 +4560,7 @@ const SOOP_DATA = {
         "id": "c5",
         "title": "고멤클래식",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/gomemc.png",
         "targetList": [
             "독고혜지",
@@ -4543,7 +4575,7 @@ const SOOP_DATA = {
         "id": "c6",
         "title": "크로아",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/croa.png",
         "targetList": [
             "요요",
@@ -4556,7 +4588,7 @@ const SOOP_DATA = {
         "id": "c7",
         "title": "오르빗",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/orbit.png",
         "targetList": [
             "김라밍",
@@ -4575,7 +4607,7 @@ const SOOP_DATA = {
         "id": "c8",
         "title": "오락실",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/oraksil.png",
         "targetList": [
             "새잎",
@@ -4596,7 +4628,7 @@ const SOOP_DATA = {
         "id": "c9",
         "title": "틈새시장",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/tssj_512.png",
         "targetList": [
             "마이곰이",
@@ -4609,7 +4641,7 @@ const SOOP_DATA = {
         "id": "c10",
         "title": "러비타",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/luvita.png",
         "targetList": [
             "김마르",
@@ -4623,7 +4655,7 @@ const SOOP_DATA = {
         "id": "c11",
         "title": "진드기",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/jindugi.png",
         "targetList": [
             "두칠",
@@ -4647,7 +4679,7 @@ const SOOP_DATA = {
         "id": "c12",
         "title": "천타버스",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/chunta.png",
         "targetList": [
             "천양",
@@ -4668,7 +4700,7 @@ const SOOP_DATA = {
         "id": "c13",
         "title": "고멤아카데미",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/acm.png",
         "targetList": [
             "닌닌",
@@ -4684,7 +4716,7 @@ const SOOP_DATA = {
         "id": "c14",
         "title": "버컴퍼니",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/vc.png",
         "targetList": [
             "유설아",
@@ -4709,7 +4741,7 @@ const SOOP_DATA = {
         "id": "c15",
         "title": "버인협회",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/virin.png",
         "targetList": [
             "부르",
@@ -4728,7 +4760,7 @@ const SOOP_DATA = {
         "id": "c16",
         "title": "털즈란",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/teol.png",
         "targetList": [
             "어쩜냥이",
@@ -4746,7 +4778,7 @@ const SOOP_DATA = {
         "id": "c17",
         "title": "도파민",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/dopa.png",
         "targetList": [
             "망구랑",
@@ -4758,7 +4790,7 @@ const SOOP_DATA = {
         "id": "c18",
         "title": "블루점프",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/bluejump.png",
         "targetList": [
             "대월향",
@@ -4773,7 +4805,7 @@ const SOOP_DATA = {
         "id": "c19",
         "title": "강씨세가",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/kangssi.png",
         "targetList": [
             "큐피",
@@ -4789,7 +4821,7 @@ const SOOP_DATA = {
         "id": "c20",
         "title": "시그널",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/signal.png",
         "targetList": [
             "카나시",
@@ -4803,7 +4835,7 @@ const SOOP_DATA = {
         "id": "c21",
         "title": "뻐스시간",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/verse.png",
         "targetList": [
             "띠꾸",
@@ -4818,7 +4850,7 @@ const SOOP_DATA = {
         "id": "c22",
         "title": "꾸한성",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/gguhan.png",
         "targetList": [
             "야무지",
@@ -4840,7 +4872,7 @@ const SOOP_DATA = {
         "id": "c23",
         "title": "수니문",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/suni.png",
         "targetList": [
             "비쥬",
@@ -4854,7 +4886,7 @@ const SOOP_DATA = {
         "id": "c24",
         "title": "포추리스",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/4chu.png",
         "targetList": [
             "주닝요",
@@ -4867,7 +4899,7 @@ const SOOP_DATA = {
         "id": "c25",
         "title": "개모임",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/dog.png",
         "targetList": [
             "따린",
@@ -4879,7 +4911,7 @@ const SOOP_DATA = {
         "id": "c26",
         "title": "베이블루",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/vablue.png",
         "targetList": [
             "최애리",
@@ -4895,7 +4927,7 @@ const SOOP_DATA = {
         "id": "c27",
         "title": "습팸",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/supfam.webp",
         "targetList": [
             "강분팡",
@@ -4921,7 +4953,7 @@ const SOOP_DATA = {
         "id": "c28",
         "title": "지력사무소",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/grsms.webp",
         "targetList": [
             "김병살",
@@ -4941,7 +4973,7 @@ const SOOP_DATA = {
         "id": "c29",
         "title": "Dplus Kia",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/dk.svg",
         "targetList": [
             "감자가비"
@@ -4951,7 +4983,7 @@ const SOOP_DATA = {
         "id": "c30",
         "title": "kt Rolster",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/kt.svg",
         "targetList": [
             "민결희",
@@ -4962,7 +4994,7 @@ const SOOP_DATA = {
         "id": "c31",
         "title": "DRX",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/drx.svg",
         "targetList": [
             "베베리"
@@ -4972,7 +5004,7 @@ const SOOP_DATA = {
         "id": "c32",
         "title": "DN SOOPers",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/dns.svg",
         "targetList": [
             "빙밍",
@@ -4983,7 +5015,7 @@ const SOOP_DATA = {
         "id": "c33",
         "title": "환승센터",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/hsst.png",
         "targetList": [
             "유키라",
@@ -4998,7 +5030,7 @@ const SOOP_DATA = {
         "id": "c34",
         "title": "싸없즈",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/suz.png",
         "targetList": [
             "마이곰이",
@@ -5010,7 +5042,7 @@ const SOOP_DATA = {
         "id": "c35",
         "title": "BNK FEARX",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/bfx.svg",
         "targetList": [
             "강해라"
@@ -5020,7 +5052,7 @@ const SOOP_DATA = {
         "id": "c36",
         "title": "고래상사",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/grss.webp",
         "targetList": [
             "빡쏘",
@@ -5042,7 +5074,7 @@ const SOOP_DATA = {
         "id": "c37",
         "title": "그린캠프",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/green.webp",
         "targetList": [
             "루디딕",
@@ -5065,7 +5097,7 @@ const SOOP_DATA = {
         "id": "c38",
         "title": "사자회",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/saja.png",
         "targetList": [
             "춘봉",
@@ -5087,7 +5119,7 @@ const SOOP_DATA = {
         "id": "c39",
         "title": "다락방",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/darak.png",
         "targetList": [
             "김미키",
@@ -5099,7 +5131,7 @@ const SOOP_DATA = {
         "id": "c40",
         "title": "박취더락",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/bat.png",
         "targetList": [
             "김세노",
@@ -5111,7 +5143,7 @@ const SOOP_DATA = {
         "id": "c41",
         "title": "홍신소",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/hss.webp",
         "targetList": [
             "고채린",
@@ -5132,7 +5164,7 @@ const SOOP_DATA = {
         "id": "c42",
         "title": "하데스",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/hades.webp",
         "targetList": [
             "솜주먹",
@@ -5146,7 +5178,7 @@ const SOOP_DATA = {
         "id": "c43",
         "title": "플랜비 연습생",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/planb.png",
         "targetList": [
             "밤베",
@@ -5162,7 +5194,7 @@ const SOOP_DATA = {
         "id": "c44",
         "title": "브이레코드",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/vrecord.svg",
         "targetList": [
             "유논",
@@ -5178,7 +5210,7 @@ const SOOP_DATA = {
         "id": "c46",
         "title": "브이럽",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/vlup.svg",
         "targetList": [
             "이주인",
@@ -5190,7 +5222,7 @@ const SOOP_DATA = {
         "id": "c47",
         "title": "지하아이돌",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/under.png",
         "targetList": [
             "우앵두",
@@ -5203,7 +5235,7 @@ const SOOP_DATA = {
         "id": "c48",
         "title": "UR:L",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/url.webp",
         "targetList": [
             "랑코",
@@ -5216,7 +5248,7 @@ const SOOP_DATA = {
         "id": "c49",
         "title": "블리즈",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/vlyz.png",
         "targetList": [
             "문모모",
@@ -5227,7 +5259,7 @@ const SOOP_DATA = {
         "id": "c50",
         "title": "아카이브",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/akaiv.webp",
         "targetList": [
             "u32",
@@ -5243,7 +5275,7 @@ const SOOP_DATA = {
         "id": "c51",
         "title": "종달새",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/jds.png",
         "targetList": [
             "윤이샘",
@@ -5256,7 +5288,7 @@ const SOOP_DATA = {
         "id": "c52",
         "title": "V급밴드",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/bvnd.png",
         "targetList": [
             "비챤",
@@ -5267,7 +5299,7 @@ const SOOP_DATA = {
         "id": "c53",
         "title": "늪지대",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/acau.webp",
         "targetList": [
             "악어",
@@ -5280,7 +5312,7 @@ const SOOP_DATA = {
         "id": "c54",
         "title": "조적단",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "조디악",
@@ -5295,7 +5327,7 @@ const SOOP_DATA = {
         "id": "c55",
         "title": "엘리브에잇",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "치비",
@@ -5307,7 +5339,7 @@ const SOOP_DATA = {
         "id": "c56",
         "title": "브이리지",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "카닌",
@@ -5318,7 +5350,7 @@ const SOOP_DATA = {
         "id": "c57",
         "title": "삼색미",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "새라새라",
@@ -5330,7 +5362,7 @@ const SOOP_DATA = {
         "id": "c58",
         "title": "헤리스",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "헤스",
@@ -5341,7 +5373,7 @@ const SOOP_DATA = {
         "id": "c59",
         "title": "메르헨",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "박디라",
@@ -5352,7 +5384,7 @@ const SOOP_DATA = {
         "id": "c60",
         "title": "꼬라지",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "하치",
@@ -5364,7 +5396,7 @@ const SOOP_DATA = {
         "id": "c61",
         "title": "지라삐",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "초금비",
@@ -5376,7 +5408,7 @@ const SOOP_DATA = {
         "id": "c62",
         "title": "러쉬",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "순우리",
@@ -5389,7 +5421,7 @@ const SOOP_DATA = {
         "id": "c63",
         "title": "주가상승",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/juga.png",
         "targetList": [
             "연주아",
@@ -5409,7 +5441,7 @@ const SOOP_DATA = {
         "id": "c64",
         "title": "배가본드",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/vagabond.png",
         "targetList": [
             "하찬찬",
@@ -5422,7 +5454,7 @@ const SOOP_DATA = {
         "id": "c65",
         "title": "아가리",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "한예림",
@@ -5435,7 +5467,7 @@ const SOOP_DATA = {
         "id": "c66",
         "title": "오르카",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "해마슈",
@@ -5448,7 +5480,7 @@ const SOOP_DATA = {
         "id": "c67",
         "title": "러키비키",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/lucky.png",
         "targetList": [
             "주예나",
@@ -5461,7 +5493,7 @@ const SOOP_DATA = {
         "id": "c68",
         "title": "포동포동",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "김다나",
@@ -5474,7 +5506,7 @@ const SOOP_DATA = {
         "id": "c69",
         "title": "모겜동",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/mogame.png",
         "targetList": [
             "뢴트게늄",
@@ -5488,7 +5520,7 @@ const SOOP_DATA = {
         "id": "c70",
         "title": "유네트",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "이안/시안/사벨린/필리샤/레비르/차티에/제론/키엘"
@@ -5498,7 +5530,7 @@ const SOOP_DATA = {
         "id": "c71",
         "title": "쿰멤",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/kum.png",
         "targetList": [
             "공주샤샤",
@@ -5510,7 +5542,7 @@ const SOOP_DATA = {
         "id": "c72",
         "title": "유라이트",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/",
         "targetList": [
             "하예소이",
@@ -5522,7 +5554,7 @@ const SOOP_DATA = {
         "id": "c73",
         "title": "이리스",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/iris.png",
         "targetList": [
             "이라",
@@ -5537,12 +5569,22 @@ const SOOP_DATA = {
         "id": "c74",
         "title": "도레미",
         "type": "CREW",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "images/logos/doremi.png",
         "targetList": [
             "힙비",
             "여다봄",
             "앵쥬"
+        ]
+    },
+    {
+        "id": "c75",
+        "title": "고멤하드코어",
+        "type": "CREW",
+        "reward": 6,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "도깨비루딘"
         ]
     },
     {
@@ -5556,6 +5598,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
-
