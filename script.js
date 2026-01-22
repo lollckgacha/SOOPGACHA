@@ -595,7 +595,14 @@ function renderShopCrew() {
 function createShopItem(s) {
     const myCard = ownedCards[s.id];
     const wrapper = document.createElement('div'); wrapper.className = "card-wrapper";
-    const buyButtons = `<div class="shop-btn-group"><button class="shop-buy-btn coin" onclick="buyCard('${s.id}', 'coin')">💎 100</button><button class="shop-buy-btn ticket" onclick="buyCard('${s.id}', 'ticket')">🎫 30</button></div>`;
+    const buyButtons = `<div class="shop-btn-group">
+    <button class="shop-buy-btn coin" onclick="buyCard('${s.id}', 'coin')">
+        <img src="images/soop_coin.svg" style="width:14px; height:14px; vertical-align:middle; margin-bottom:2px;"> 100
+    </button>
+    <button class="shop-buy-btn ticket" onclick="buyCard('${s.id}', 'ticket')">
+        🎫 30
+    </button>
+</div>`;
     let img = (s.imgs && s.imgs.length > 0) ? s.imgs[0] : DEFAULT_IMG_URL;
 
     // 보유 여부에 따른 클래스 및 별 처리
@@ -885,4 +892,5 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
 
