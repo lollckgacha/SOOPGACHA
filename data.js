@@ -8,7 +8,7 @@ const DEFAULT_IMG_URL = "images/soop_logo.svg";
    ========================================================================= */
 const GAME_SETTINGS = {
     "pickup_target": "이세계아이돌",
-    "pickup_rate": 3,
+    "pickup_rate": 2.5,
     "pickup_banner": "images/gacha/isedolban.webp",
     "event_text": "이세계아이돌 확률 업!"
 };
@@ -18,7 +18,7 @@ const GAME_SETTINGS = {
    ========================================================================= */
 const SOOP_DATA = {
     streamers: [
-   {
+    {
         "id": "s1",
         "name": "감블러",
         "channelUrl": "https:https://www.sooplive.co.kr/station/9ambler",
@@ -1063,7 +1063,7 @@ const SOOP_DATA = {
         "name": "문다틸",
         "channelUrl": "https://www.sooplive.co.kr/station/datil421",
         "imgs": [
-            "images/streamers/mundatil.png"
+            "images/streamers/newdatil.png"
         ]
     },
     {
@@ -2308,7 +2308,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s287",
-        "name": "차하나",
+        "name": "강하나",
         "channelUrl": "https://www.sooplive.co.kr/station/hani0320",
         "imgs": [
             "images/streamers/chahana.png"
@@ -4409,6 +4409,46 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/syasya.webp"
         ]
+    },
+    {
+        "id": "s550",
+        "name": "세르",
+        "channelUrl": "https://www.sooplive.co.kr/station/yourseru",
+        "imgs": [
+            "images/streamers/ser.png"
+        ]
+    },
+    {
+        "id": "s551",
+        "name": "송민트",
+        "channelUrl": "https://www.sooplive.co.kr/station/ad8hv5jk7d6",
+        "imgs": [
+            "images/streamers/songmint.png"
+        ]
+    },
+    {
+        "id": "s552",
+        "name": "온유일",
+        "channelUrl": "https://www.sooplive.co.kr/station/oneon1y",
+        "imgs": [
+            "images/streamers/onyuil.png"
+        ]
+    },
+    {
+        "id": "s553",
+        "name": "강뿌잉",
+        "channelUrl": "https://www.sooplive.co.kr/station/so218218",
+        "imgs": [
+            "images/streamers/bbuing.png"
+        ]
+    },
+    {
+        "id": "s554",
+        "name": "정푸푸",
+        "channelUrl": "https://www.sooplive.co.kr/station/locy1212",
+        "imgs": [
+            "images/streamers/jeongpupu.png"
+        ]
     }
 ],
     achievements: [
@@ -4721,7 +4761,7 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/kangssi.png",
         "targetList": [
             "큐피",
-            "차하나",
+            "강하나",
             "깡담비",
             "깐숙",
             "망개",
@@ -5351,12 +5391,12 @@ const SOOP_DATA = {
     },
     {
         "id": "c64",
-        "title": "베가본드",
+        "title": "배가본드",
         "type": "CREW",
         "reward": 3,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/vagabond.png",
         "targetList": [
-            "찬찬",
+            "하찬찬",
             "슈타",
             "도르",
             "건수"
@@ -5445,9 +5485,9 @@ const SOOP_DATA = {
         "reward": 3,
         "logoUrl": "images/logos/kum.png",
         "targetList": [
-            "샤샤",
+            "공주샤샤",
             "야구자",
-            "이드"
+            "마법소녀이드"
         ]
     },
     {
@@ -5458,7 +5498,7 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/",
         "targetList": [
             "하예소이",
-            "헤레느",
+            "해레느",
             "금독희"
         ]
     },
@@ -5500,5 +5540,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
