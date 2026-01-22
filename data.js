@@ -5206,8 +5206,6 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/vrecord.svg",
         "targetList": [
             "유논",
-            "헤스",
-            "리리스",
             "달리",
             "사인",
             "시오",
@@ -5596,6 +5594,18 @@ const SOOP_DATA = {
         ]
     },
     {
+        "id": "c76",
+        "title": "헤리스",
+        "type": "CREW",
+        "reward": 6,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "헤스",
+            "리리스",
+        ]
+    },
+      
+    {
         "id": "m1",
         "title": "카드 수집",
         "type": "COUNT",
@@ -5606,4 +5616,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
