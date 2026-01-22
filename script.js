@@ -58,6 +58,7 @@ let currentShopMode = 'all';
 let revealTimer = null;
 let isSkipping = false;
 let isDarkMode = false;
+let gameBestScore = 0;
 
 /* =========================================================================
    [2] 초기화 및 데이터 로드
@@ -149,7 +150,7 @@ function loadData() {
                 clearedAchievements = data.a || data.achievements || [];
                 userStats = data.s || data.stats || { pulls: 0, spent: 0 };
                 isDarkMode = data.dark || false;
-                if(typeof gameBestScore !== 'undefined') gameBestScore = data.bestScore || 0;
+                gameBestScore = data.bestScore || 0;
                 customPickupList = data.customPickup || [];
                 localStorage.setItem('last_login', data.t || data.lastLogin);
             }
@@ -884,3 +885,4 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
