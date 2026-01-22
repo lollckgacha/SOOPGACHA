@@ -5515,7 +5515,7 @@ const SOOP_DATA = {
         "title": "이리스",
         "type": "CREW",
         "reward": 3,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/iris.png",
         "targetList": [
             "이라",
             "루빗",
@@ -5548,4 +5548,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
