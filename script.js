@@ -888,7 +888,18 @@ function openLogoSelect() { const modal = document.getElementById('modal-logo-se
 function openFullImage() { document.getElementById('full-image-src').src = document.getElementById('detail-card-img').src; document.getElementById('modal-full-image').style.display = 'flex'; }
 function openSoopChannel() { const s = SOOP_DATA.streamers.find(x => x.id === currentDetailId); if(s && s.channelUrl) window.open(s.channelUrl, '_blank'); }
 function exportSaveData() { const saveObj = { c: userCoins, bp: userBP, d: {}, cr: myCrew, l: myCrewLogo, a: clearedAchievements, s: userStats, t: localStorage.getItem('last_login') }; for (const [id, info] of Object.entries(ownedCards)) saveObj.d[id] = info.stars; const compressed = LZString.compressToBase64(JSON.stringify(saveObj)); navigator.clipboard.writeText(compressed).then(() => alert("세이브 코드가 복사되었습니다.")).catch(()=>alert("복사 실패")); }
-function importSaveData() { const code = prompt("세이브 코드를 붙여넣으세요:"); if(!code) return; if (code === "wakgood0724") { if (!confirm("관리자 모드: 모든 카드를 획득하고 숲코인을 무한으로 설정하시겠습니까?")) return; const allCards = {}; SOOP_DATA.streamers.forEach(s => { allCards[s.id] = { stars: 5, rank: 1, skin: 1 }; }); const allAchievements = (SOOP_DATA.achievements || []).map(a => a.id); userCoins = 999999; ownedCards = allCards; clearedAchievements = allAchievements; saveData(); alert("관리자 권한 승인 완료!"); location.reload(); return; } try { let decompressed = LZString.decompressFromBase64(code); let data = decompressed ? JSON.parse(decompressed) : JSON.parse(decodeURIComponent(escape(atob(code)))); if(data) { userCoins = data.c || data.coins; ownedCards = {}; if(data.d) for (const [id, stars] of Object.entries(data.d)) ownedCards[id] = { rank: 1, skin: 1, stars: stars }; else ownedCards = data.cards; myCrew = data.cr || data.crew; myCrewLogo = data.l || data.crewLogo; clearedAchievements = data.a || data.achievements; userStats = data.s || data.stats; saveData(); alert("성공적으로 불러왔습니다!"); location.reload(); } } catch(e) { alert("잘못된 세이브 코드입니다."); } }
+function importSaveData() { const code = prompt("세이브 코드를 붙여넣으세요:"); if(!code) return; if (code === "wakgood0724") { 
+        if (!confirm("관리자 모드: 모든 카드를 획득하고 숲코인을 무한으로 설정하시겠습니까?")) return; 
+        
+        const allCards = {}; 
+        SOOP_DATA.streamers.forEach(s => { 
+            // [수정 포인트] 양도끼(s226)는 22성, 나머지는 5성으로 지급
+            if (s.id === 's226') {
+                allCards[s.id] = { stars: 22, rank: 1, skin: 1 };
+            } else {
+                allCards[s.id] = { stars: 5, rank: 1, skin: 1 }; 
+            }
+        }); const allAchievements = (SOOP_DATA.achievements || []).map(a => a.id); userCoins = 999999; ownedCards = allCards; clearedAchievements = allAchievements; saveData(); alert("관리자 권한 승인 완료!"); location.reload(); return; } try { let decompressed = LZString.decompressFromBase64(code); let data = decompressed ? JSON.parse(decompressed) : JSON.parse(decodeURIComponent(escape(atob(code)))); if(data) { userCoins = data.c || data.coins; ownedCards = {}; if(data.d) for (const [id, stars] of Object.entries(data.d)) ownedCards[id] = { rank: 1, skin: 1, stars: stars }; else ownedCards = data.cards; myCrew = data.cr || data.crew; myCrewLogo = data.l || data.crewLogo; clearedAchievements = data.a || data.achievements; userStats = data.s || data.stats; saveData(); alert("성공적으로 불러왔습니다!"); location.reload(); } } catch(e) { alert("잘못된 세이브 코드입니다."); } }
 function openSettings() { updateUI(); document.getElementById('modal-settings').style.display = 'flex'; }
 function closeSettings() { document.getElementById('modal-settings').style.display = 'none'; }
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
@@ -901,6 +912,7 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
 
 
 
