@@ -4457,7 +4457,15 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/ralothy.png"
         ]
-    }
+    },
+   {
+        "id": "s556",
+        "name": "도화",
+        "channelUrl": "https://www.sooplive.co.kr/station/ringbyul",
+        "imgs": [
+            "images/streamers/dohwa.png"
+        ]
+   }
 ],
     achievements: [
     {
@@ -5548,5 +5556,6 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
 
