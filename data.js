@@ -5355,7 +5355,7 @@ const SOOP_DATA = {
         "title": "조적단",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/jjd.png",
         "targetList": [
             "조디악",
             "설이",
@@ -5370,7 +5370,7 @@ const SOOP_DATA = {
         "title": "엘리브에잇",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/elev8.jpg",
         "targetList": [
             "치비",
             "오잉",
@@ -5382,7 +5382,7 @@ const SOOP_DATA = {
         "title": "브이리지",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/vllage.svg",
         "targetList": [
             "카닌",
             "세라"
@@ -5393,7 +5393,7 @@ const SOOP_DATA = {
         "title": "삼색미",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/ssm.png",
         "targetList": [
             "새라새라",
             "하나나",
@@ -5416,7 +5416,7 @@ const SOOP_DATA = {
         "title": "메르헨",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/marchen.jpg",
         "targetList": [
             "박디라",
             "네링"
@@ -5563,7 +5563,7 @@ const SOOP_DATA = {
         "title": "유네트",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/unet.png",
         "targetList": [
             "이안/시안/사벨린/필리샤/레비르/차티에/제론/키엘"
         ]
@@ -5627,7 +5627,7 @@ const SOOP_DATA = {
         "title": "고멤하드코어",
         "type": "CREW",
         "reward": 6,
-        "logoUrl": "images/logos/",
+        "logoUrl": "images/logos/goha.webp",
         "targetList": [
             "도깨비루딘"
         ]
