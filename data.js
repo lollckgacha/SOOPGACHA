@@ -2908,7 +2908,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s362",
-        "name": "해루석",
+        "name": "루석",
         "channelUrl": "https://www.sooplive.co.kr/station/sangsoak",
         "imgs": [
             "images/streamers/haeruseog.webp"
@@ -5860,3 +5860,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
