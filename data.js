@@ -5239,8 +5239,6 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/vrecord.svg",
         "targetList": [
             "유논",
-            "헤스",
-            "리리스",
             "달리",
             "사인",
             "시오",
