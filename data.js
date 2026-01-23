@@ -4572,7 +4572,7 @@ const SOOP_DATA = {
     },
     {
         "id": "s570",
-        "name": "리퍼",
+        "name": "자몽",
         "channelUrl": "https://www.sooplive.co.kr/station/kwakchunshik",
         "imgs": [
             "images/streamers/riper.png"
@@ -5688,4 +5688,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
