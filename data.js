@@ -1671,7 +1671,7 @@ const SOOP_DATA = {
         "name": "시루냥",
         "channelUrl": "https://www.sooplive.co.kr/station/xirus2",
         "imgs": [
-            "images/streamers/sirunyang.png"
+            "images/streamers/newsirunyang.png"
         ]
     },
     {
@@ -4479,7 +4479,7 @@ const SOOP_DATA = {
         "name": "베쿠",
         "channelUrl": "https://www.sooplive.co.kr/station/bekuku",
         "imgs": [
-            "images/streamers/beku.png"
+            "images/streamers/newbeku.png"
         ]
     },
     {
@@ -4592,6 +4592,142 @@ const SOOP_DATA = {
         "channelUrl": "https://www.sooplive.co.kr/station/moonkong9",
         "imgs": [
             "images/streamers/moonkong.png"
+        ]
+    },
+    {
+        "id": "s573",
+        "name": "쁘아",
+        "channelUrl": "https://www.sooplive.co.kr/station/bbua104",
+        "imgs": [
+            "images/streamers/bbua.png"
+        ]
+    },
+    {
+        "id": "s574",
+        "name": "올어바웃설이",
+        "channelUrl": "https://www.sooplive.co.kr/station/dougie0328",
+        "imgs": [
+            "images/streamers/allabout.png"
+        ]
+    },
+    {
+        "id": "s575",
+        "name": "네야",
+        "channelUrl": "https://www.sooplive.co.kr/station/byulzan012",
+        "imgs": [
+            "images/streamers/neya.png"
+        ]
+    },
+    {
+        "id": "s576",
+        "name": "김꿀비",
+        "channelUrl": "https://www.sooplive.co.kr/station/rnfql22",
+        "imgs": [
+            "images/streamers/kimggulbi.png"
+        ]
+    },
+    {
+        "id": "s577",
+        "name": "표린",
+        "channelUrl": "https://www.sooplive.co.kr/station/ranche4301",
+        "imgs": [
+            "images/streamers/pyorin.png"
+        ]
+    },
+    {
+        "id": "s578",
+        "name": "얀삐",
+        "channelUrl": "https://www.sooplive.co.kr/station/yanppi",
+        "imgs": [
+            "images/streamers/yanbbi.png"
+        ]
+    },
+    {
+        "id": "s579",
+        "name": "퀸례례",
+        "channelUrl": "https://www.sooplive.co.kr/station/eunyounglove",
+        "imgs": [
+            "images/streamers/queenrere.png"
+        ]
+    },
+    {
+        "id": "s580",
+        "name": "바니카",
+        "channelUrl": "https://www.sooplive.co.kr/station/kyeajin1227",
+        "imgs": [
+            "images/streamers/banika.png"
+        ]
+    },
+    {
+        "id": "s581",
+        "name": "시후",
+        "channelUrl": "https://www.sooplive.co.kr/station/sihu0426",
+        "imgs": [
+            "images/streamers/sihu.png"
+        ]
+    },
+    {
+        "id": "s582",
+        "name": "곽상필",
+        "channelUrl": "https://www.sooplive.co.kr/station/highfeel3391",
+        "imgs": [
+            "images/streamers/gwaksangpil.png"
+        ]
+    },
+    {
+        "id": "s583",
+        "name": "요나카",
+        "channelUrl": "https://www.sooplive.co.kr/station/yonakayo05",
+        "imgs": [
+            "images/streamers/yonaka.png"
+        ]
+    },
+    {
+        "id": "s584",
+        "name": "아이탄",
+        "channelUrl": "https://www.sooplive.co.kr/station/gh0832310",
+        "imgs": [
+            "images/streamers/aitan.png"
+        ]
+    },
+    {
+        "id": "s585",
+        "name": "코미야미",
+        "channelUrl": "https://www.sooplive.co.kr/station/kkomiyami",
+        "imgs": [
+            "images/streamers/komiyami.png"
+        ]
+    },
+    {
+        "id": "s586",
+        "name": "백소라",
+        "channelUrl": "https://www.sooplive.co.kr/station/whitesora",
+        "imgs": [
+            "images/streamers/paiksora.png"
+        ]
+    },
+    {
+        "id": "s587",
+        "name": "예니",
+        "channelUrl": "https://www.sooplive.co.kr/station/yeniouoyeni",
+        "imgs": [
+            "images/streamers/yeni.png"
+        ]
+    },
+    {
+        "id": "s588",
+        "name": "실리아",
+        "channelUrl": "https://www.sooplive.co.kr/station/applelove234",
+        "imgs": [
+            "images/streamers/sillia.png"
+        ]
+    },
+    {
+        "id": "s589",
+        "name": "빵뿌",
+        "channelUrl": "https://www.sooplive.co.kr/station/bbangbbo0",
+        "imgs": [
+            "images/streamers/bbangbbu.png"
         ]
     }
 ],
@@ -5694,6 +5830,26 @@ const SOOP_DATA = {
         ]
     },
     {
+        "id": "c76",
+        "title": "아최레이블",
+        "type": "CREW",
+        "reward": 6,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "닌닌",
+            "서애라",
+            "아이탄",
+            "베쿠",
+            "키젤",
+            "이루희",
+            "투미츠",
+            "코미야미",
+            "백소라",
+            "온유일",
+            "예니"
+        ]
+    },
+    {
         "id": "m1",
         "title": "카드 수집",
         "type": "COUNT",
@@ -5704,5 +5860,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
