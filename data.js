@@ -935,7 +935,7 @@ const SOOP_DATA = {
         "name": "마이곰이",
         "channelUrl": "https://www.sooplive.co.kr/station/mygomiee",
         "imgs": [
-            "images/streamers/maigomi_3.png"
+            "images/streamers/newgomi2.png"
         ]
     },
     {
@@ -1151,7 +1151,7 @@ const SOOP_DATA = {
         "name": "밍턴",
         "channelUrl": "https://www.sooplive.co.kr/station/mingturn97",
         "imgs": [
-            "images/streamers/mingteon.png"
+            "images/streamers/newmingturn.png"
         ]
     },
     {
@@ -5688,5 +5688,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
