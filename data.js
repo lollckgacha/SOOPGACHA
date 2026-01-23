@@ -4545,6 +4545,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/orubit.png"
         ]
+    },
+    {
+        "id": "s567",
+        "name": "루나",
+       "channelUrl": "https://www.sooplive.co.kr/station/ltg8022",
+        "imgs": [
+            "images/streamers/runa.png"
+        ]
     }
 ],
     achievements: [
@@ -5656,4 +5664,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
