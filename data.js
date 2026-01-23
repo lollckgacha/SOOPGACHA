@@ -4585,6 +4585,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/seohayeon.png"
         ]
+    },
+    {
+        "id": "s572",
+        "name": "문콩",
+        "channelUrl": "https://www.sooplive.co.kr/station/moonkong9",
+        "imgs": [
+            "images/streamers/moonkong.png"
+        ]
     }
 ],
     achievements: [
@@ -5696,4 +5704,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
