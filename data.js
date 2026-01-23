@@ -18,7 +18,7 @@ const GAME_SETTINGS = {
    ========================================================================= */
 const SOOP_DATA = {
     streamers: [
-   {
+    {
         "id": "s1",
         "name": "감블러",
         "channelUrl": "https:https://www.sooplive.co.kr/station/9ambler",
@@ -4521,6 +4521,22 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/era.png"
         ]
+    },
+    {
+        "id": "s564",
+        "name": "철도왕길버트",
+        "channelUrl": "https://www.sooplive.co.kr/station/gilbet1801",
+        "imgs": [
+            "images/streamers/bilt.webp"
+        ]
+    },
+    {
+        "id": "s565",
+        "name": "고단씨",
+        "channelUrl": "https://www.sooplive.co.kr/station/ghdtjdwns813",
+        "imgs": [
+            "images/streamers/danssi.webp"
+        ]
     }
 ],
     achievements: [
@@ -4733,7 +4749,8 @@ const SOOP_DATA = {
             "빅토리",
             "성기사샬롯",
             "시리안레인",
-            "아마데우스최"
+            "아마데우스최",
+            "철도왕길버트"
         ]
     },
     {
@@ -5286,6 +5303,7 @@ const SOOP_DATA = {
         "reward": 6,
         "logoUrl": "images/logos/akaiv.webp",
         "targetList": [
+            "고단씨",
             "u32",
             "여르미",
             "한결",
@@ -5557,6 +5575,7 @@ const SOOP_DATA = {
         "reward": 6,
         "logoUrl": "images/logos/kum.png",
         "targetList": [
+            "철도왕길버트",
             "공주샤샤",
             "야구자",
             "마법소녀이드",
