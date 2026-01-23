@@ -4569,6 +4569,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/meri.png"
         ]
+    },
+    {
+        "id": "s570",
+        "name": "리퍼",
+        "channelUrl": "https://www.sooplive.co.kr/station/kwakchunshik",
+        "imgs": [
+            "images/streamers/riper.png"
+        ]
     }
 ],
     achievements: [
@@ -5680,3 +5688,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
