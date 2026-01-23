@@ -4537,6 +4537,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/danssi.webp"
         ]
+    },
+    {
+        "id": "s566",
+        "name": "오르빗",
+        "channelUrl": "https://www.sooplive.co.kr/station/sarak0501",
+        "imgs": [
+            "images/streamers/orubit.png"
+        ]
     }
 ],
     achievements: [
@@ -5648,3 +5656,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
