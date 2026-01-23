@@ -4577,6 +4577,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/riper.png"
         ]
+    },
+    {
+        "id": "s571",
+        "name": "서하연",
+        "channelUrl": "https://www.sooplive.co.kr/station/hyeonshy",
+        "imgs": [
+            "images/streamers/seohayeon.png"
+        ]
     }
 ],
     achievements: [
@@ -5688,3 +5696,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
