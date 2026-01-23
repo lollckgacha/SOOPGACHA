@@ -18,7 +18,7 @@ const GAME_SETTINGS = {
    ========================================================================= */
 const SOOP_DATA = {
     streamers: [
-    {
+   {
         "id": "s1",
         "name": "감블러",
         "channelUrl": "https:https://www.sooplive.co.kr/station/9ambler",
@@ -4497,13 +4497,29 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/yusangchu.png"
         ]
-     },
+    },
     {
         "id": "s561",
         "name": "마리별",
         "channelUrl": "https://www.sooplive.co.kr/station/maribyeol",
         "imgs": [
             "images/streamers/maribyeol.png"
+        ]
+    },
+    {
+        "id": "s562",
+        "name": "버드",
+        "channelUrl": "https://www.sooplive.co.kr/station/nam2bird",
+        "imgs": [
+            "images/streamers/bird.png"
+        ]
+    },
+    {
+        "id": "s563",
+        "name": "서애라",
+        "channelUrl": "https://www.sooplive.co.kr/station/cheongchun25",
+        "imgs": [
+            "images/streamers/era.png"
         ]
     }
 ],
@@ -5206,6 +5222,8 @@ const SOOP_DATA = {
         "logoUrl": "images/logos/vrecord.svg",
         "targetList": [
             "유논",
+            "헤스",
+            "리리스",
             "달리",
             "사인",
             "시오",
@@ -5541,7 +5559,9 @@ const SOOP_DATA = {
         "targetList": [
             "공주샤샤",
             "야구자",
-            "마법소녀이드"
+            "마법소녀이드",
+            "버드",
+            "서애라"
         ]
     },
     {
@@ -5593,8 +5613,6 @@ const SOOP_DATA = {
             "도깨비루딘"
         ]
     },
-    
-      
     {
         "id": "m1",
         "title": "카드 수집",
@@ -5606,6 +5624,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
-
