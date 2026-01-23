@@ -4549,9 +4549,25 @@ const SOOP_DATA = {
     {
         "id": "s567",
         "name": "루나",
-       "channelUrl": "https://www.sooplive.co.kr/station/ltg8022",
+        "channelUrl": "https://www.sooplive.co.kr/station/ltg8022",
         "imgs": [
             "images/streamers/runa.png"
+        ]
+    },
+    {
+        "id": "s568",
+        "name": "노니",
+        "channelUrl": "https://www.sooplive.co.kr/station/89girl",
+        "imgs": [
+            "images/streamers/noni.png"
+        ]
+    },
+    {
+        "id": "s569",
+        "name": "메리",
+        "channelUrl": "https://www.sooplive.co.kr/station/meryvtuber",
+        "imgs": [
+            "images/streamers/meri.png"
         ]
     }
 ],
@@ -5664,5 +5680,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
