@@ -557,7 +557,19 @@ function renderShopAll(page = 1) {
     const search = document.getElementById('shop-search').value.toLowerCase();
     const filter = document.getElementById('shop-filter').value;
     let targets = SOOP_DATA.streamers.filter(s => s.name.toLowerCase().includes(search));
-    if (filter === 'unowned') { targets = targets.filter(s => !ownedCards[s.id]); }
+    /* script.js의 renderShopAll 함수 내부 */
+
+// [수정] 필터 로직 확장 (미보유 + 등급별 필터)
+if (filter === 'unowned') {
+    // 미보유 카드만 보기
+    targets = targets.filter(s => !ownedCards[s.id]);
+} else if (filter !== 'all') {
+    // 특정 등급만 보기 (보유하고 있어야 함)
+    targets = targets.filter(s => {
+        const info = ownedCards[s.id];
+        return info && info.stars == filter;
+    });
+}
     if (currentShopChosung !== '전체') { targets = targets.filter(s => getInitialSound(s.name) === currentShopChosung); }
     targets.sort((a, b) => a.name.localeCompare(b.name));
     const startIndex = (page - 1) * ITEMS_PER_PAGE; const endIndex = startIndex + ITEMS_PER_PAGE; const pageItems = targets.slice(startIndex, endIndex);
@@ -912,6 +924,7 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
 
 
 
