@@ -4729,6 +4729,62 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/bbangbbu.png"
         ]
+    },
+    {
+        "id": "s590",
+        "name": "내는탱자",
+        "channelUrl": "https://www.sooplive.co.kr/station/popo030",
+        "imgs": [
+            "images/streamers/nenumtaengja.png"
+        ]
+    },
+    {
+        "id": "s591",
+        "name": "민초희",
+        "channelUrl": "https://www.sooplive.co.kr/station/pipinstall",
+        "imgs": [
+            "images/streamers/minchohee.png"
+        ]
+    },
+    {
+        "id": "s592",
+        "name": "뚜우",
+        "channelUrl": "https://www.sooplive.co.kr/station/duddj4210",
+        "imgs": [
+            "images/streamers/ddu.png"
+        ]
+    },
+    {
+        "id": "s593",
+        "name": "쵸르",
+        "channelUrl": "https://www.sooplive.co.kr/station/0yoruvo0",
+        "imgs": [
+            "images/streamers/chor.png"
+        ]
+    },
+    {
+        "id": "s594",
+        "name": "츄르",
+        "channelUrl": "https://www.sooplive.co.kr/station/chur1004",
+        "imgs": [
+            "images/streamers/chur.png"
+        ]
+    },
+    {
+        "id": "s595",
+        "name": "달달햇",
+        "channelUrl": "https://www.sooplive.co.kr/station/ninfantaem",
+        "imgs": [
+            "images/streamers/daldalhet.png"
+        ]
+    },
+    {
+        "id": "s596",
+        "name": "이깨굴",
+        "channelUrl": "https://www.sooplive.co.kr/station/dlalswl8811",
+        "imgs": [
+            "images/streamers/leeggegul.png"
+        ]
     }
 ],
     achievements: [
@@ -5850,14 +5906,31 @@ const SOOP_DATA = {
         ]
     },
     {
+        "id": "c77",
+        "title": "오뚝이",
+        "type": "CREW",
+        "reward": 6,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "하링",
+            "쵸르",
+            "김혜나",
+            "달달햇",
+            "미미",
+            "나탄토",
+            "서하연",
+            "방진구",
+            "이찬찬"
+        ]
+    },
+    {
         "id": "m1",
         "title": "카드 수집",
         "type": "COUNT",
-        "reward": 3,
+        "reward": 6,
         "logoUrl": "",
         "targetCount": 10,
         "isInfinite": true
     }
 ]
 };
-
