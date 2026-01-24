@@ -354,7 +354,7 @@ function pullGacha() {
         saveData();
         updateUI();
 
-        if(refundCount > 0) document.getElementById('gacha-refund-notice').innerText = `5성(졸업) 중복 ${refundCount}장 1숲코인 환급!`;
+        if(refundCount > 0) document.getElementById('gacha-refund-notice').innerText = `5성 중복 ${refundCount}장 1숲코인 환급!`;
         else document.getElementById('gacha-refund-notice').innerText = "";
         
         const grid = document.getElementById('gacha-result-grid'); grid.innerHTML = "";
@@ -924,6 +924,7 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
 
 
 
