@@ -12,7 +12,16 @@ let myCrewName = "";
 let myCrewColor = "#ffffff"; 
 let myCrewSize = 6; 
 let currentFormationKey = '1-4-3-3'; 
+/* script.js의 createShopItem 함수 내부 */
 
+const buyButtons = `<div class="shop-btn-group">
+    <button class="shop-buy-btn coin" onclick="buyCard('${s.id}', 'coin')">
+        <img src="images/soop_coin.svg" style="width:14px; height:14px; vertical-align:middle; margin-bottom:2px;"> 100
+    </button>
+    <button class="shop-buy-btn ticket" onclick="buyCard('${s.id}', 'ticket')">
+        🎫 30
+    </button>
+</div>`;
 // 진형 설정
 const FORMATIONS = {
     '1-4-4-2': [1, 4, 4, 2],
@@ -604,7 +613,9 @@ function renderShopCrew() {
 function createShopItem(s) {
     const myCard = ownedCards[s.id];
     const wrapper = document.createElement('div'); wrapper.className = "card-wrapper";
-    const buyButtons = `<div class="shop-btn-group">
+    /* script.js의 createShopItem 함수 내부 */
+
+const buyButtons = `<div class="shop-btn-group">
     <button class="shop-buy-btn coin" onclick="buyCard('${s.id}', 'coin')">
         <img src="images/soop_coin.svg" style="width:14px; height:14px; vertical-align:middle; margin-bottom:2px;"> 100
     </button>
@@ -912,6 +923,7 @@ function openPatchNotes() {
         modal.style.display = 'flex';
     }
 }
+
 
 
 
