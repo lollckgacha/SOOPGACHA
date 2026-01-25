@@ -4785,6 +4785,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/leeggegul.png"
         ]
+    },
+    {
+        "id": "s597",
+        "name": "왁파고",
+        "channelUrl": "https://www.sooplive.co.kr/station/wakphago",
+        "imgs": [
+            "images/streamers/wakphago.webp"
+        ]
     }
 ],
     achievements: [
@@ -4856,7 +4864,8 @@ const SOOP_DATA = {
             "비밀소녀",
             "티파니0421",
             "해루석",
-            "곽춘식"
+            "곽춘식",
+            "왁파고"
         ]
     },
     {
@@ -5934,3 +5943,4 @@ const SOOP_DATA = {
     }
 ]
 };
+
