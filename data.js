@@ -21,7 +21,7 @@ const SOOP_DATA = {
     {
         "id": "s1",
         "name": "감블러",
-        "channelUrl": "https://www.sooplive.co.kr/station/9ambler",
+        "channelUrl": "https:https://www.sooplive.co.kr/station/9ambler",
         "imgs": [
             "images/streamers/gambl.png"
         ]
@@ -4937,6 +4937,70 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/yokoring.png"
         ]
+    },
+    {
+        "id": "s616",
+        "name": "더블링",
+        "channelUrl": "https://www.sooplive.co.kr/station/doubleing",
+        "imgs": [
+            "images/streamers/doubleing.png"
+        ]
+    },
+    {
+        "id": "s617",
+        "name": "토치와",
+        "channelUrl": "https://www.sooplive.co.kr/station/tochihua",
+        "imgs": [
+            "images/streamers/tochihua.png"
+        ]
+    },
+    {
+        "id": "s618",
+        "name": "체리베",
+        "channelUrl": "https://www.sooplive.co.kr/station/cherrybe0w0",
+        "imgs": [
+            "images/streamers/cherrybe0w0.png"
+        ]
+    },
+    {
+        "id": "s619",
+        "name": "두둥희",
+        "channelUrl": "https://www.sooplive.co.kr/station/dksekgml121",
+        "imgs": [
+            "images/streamers/dudunghee.png"
+        ]
+    },
+    {
+        "id": "s620",
+        "name": "채윤아",
+        "channelUrl": "https://www.sooplive.co.kr/station/yuna812",
+        "imgs": [
+            "images/streamers/chaeyuna.png"
+        ]
+    },
+    {
+        "id": "s621",
+        "name": "코로미",
+        "channelUrl": "https://www.sooplive.co.kr/station/bxroong",
+        "imgs": [
+            "images/streamers/korome.png"
+        ]
+    },
+    {
+        "id": "s622",
+        "name": "마왕루야",
+        "channelUrl": "https://www.sooplive.co.kr/station/maoruyakr",
+        "imgs": [
+            "images/streamers/mawangruya.png"
+        ]
+    },
+    {
+        "id": "s623",
+        "name": "마리엘",
+        "channelUrl": "https://www.sooplive.co.kr/station/s2mariel",
+        "imgs": [
+            "images/streamers/mariel.png"
+        ]
     }
 ],
     achievements: [
@@ -6084,6 +6148,18 @@ const SOOP_DATA = {
         "targetList": [
             "밤새나",
             "다니얀"
+        ]
+    },
+    {
+        "id": "c79",
+        "title": "키치즈",
+        "type": "CREW",
+        "reward": 6,
+        "logoUrl": "images/logos/kitschz.png",
+        "targetList": [
+            "더블링",
+            "토치와",
+            "체리베"
         ]
     },
     {
