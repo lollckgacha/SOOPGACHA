@@ -5001,7 +5001,16 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/mariel.png"
         ]
+    },
+    {
+        "id": "s624",
+        "name": "햄쩌구",
+        "channelUrl": "https://www.sooplive.co.kr/station/zzeogoo",
+        "imgs": [
+            "images/streamers/hamzzeogu.png"
+        ]
     }
+       
 ],
     achievements: [
     {
@@ -6173,4 +6182,5 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
