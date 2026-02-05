@@ -5049,6 +5049,30 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/baekseohyang.png"
         ]
+    },
+    {
+        "id": "s630",
+        "name": "치치",
+        "channelUrl": "https://www.sooplive.co.kr/station/lomioeov",
+        "imgs": [
+            "images/streamers/chichi.png"
+        ]
+    },
+    {
+        "id": "s631",
+        "name": "하쿠마",
+        "channelUrl": "https://www.sooplive.co.kr/station/hacuma09",
+        "imgs": [
+            "images/streamers/hakuma.png"
+        ]
+    },
+    {
+        "id": "s632",
+        "name": "쮸",
+        "channelUrl": "https://www.sooplive.co.kr/station/zuu1028",
+        "imgs": [
+            "images/streamers/zzyu.png"
+        ]
     }
        
 ],
@@ -6222,6 +6246,7 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
 
 
