@@ -5073,6 +5073,14 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/zzyu.png"
         ]
+    },
+    {
+        "id": "s633",
+        "name": "라일락",
+        "channelUrl": "https://www.sooplive.co.kr/station/lilacev",
+        "imgs": [
+            "images/streamers/lilac.png"
+        ]
     }
        
 ],
@@ -6246,6 +6254,7 @@ const SOOP_DATA = {
     }
 ]
 };
+
 
 
 
