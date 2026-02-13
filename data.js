@@ -10,7 +10,7 @@ const GAME_SETTINGS = {
     "pickup_target": "이세계아이돌",
     "pickup_rate": 2.5,
     "pickup_banner": "images/gacha/isedolban.webp",
-    "event_text": "이세계아이돌 확률 업!"  
+    "event_text": "이세계아이돌 확률 업!"
 };
 
 /* =========================================================================
@@ -5009,7 +5009,7 @@ const SOOP_DATA = {
         "imgs": [
             "images/streamers/hamzzeogu.png"
         ]
-     },
+    },
     {
         "id": "s625",
         "name": "김쁘피",
@@ -5114,7 +5114,6 @@ const SOOP_DATA = {
             "images/streamers/punyang.png"
         ]
     }
-       
 ],
     achievements: [
     {
@@ -6276,6 +6275,18 @@ const SOOP_DATA = {
         ]
     },
     {
+        "id": "c80",
+        "title": "플로디",
+        "type": "CREW",
+        "reward": 6,
+        "logoUrl": "images/logos/",
+        "targetList": [
+            "김쁘피",
+            "미링",
+            "린코"
+        ]
+    },
+    {
         "id": "m1",
         "title": "카드 수집",
         "type": "COUNT",
@@ -6286,10 +6297,3 @@ const SOOP_DATA = {
     }
 ]
 };
-
-
-
-
-
-
-
